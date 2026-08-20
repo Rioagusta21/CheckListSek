@@ -1,0 +1,1947 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ChecklistSek — Jangan sampai ketinggalan.</title>
+<meta name="description" content="Persiapkan perlengkapan, logistik, tim, jalur, dan itinerary pendakianmu dalam satu tempat. Tersinkron di cloud, masuk dengan akun Google atau email.">
+<meta name="theme-color" content="#173B29">
+<link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjogIkNoZWNrbGlzdFNlayBcdTIwMTQgUGVyc2lhcGFuIFBlbmRha2lhbiIsICJzaG9ydF9uYW1lIjogIkNoZWNrbGlzdFNlayIsICJkZXNjcmlwdGlvbiI6ICJKYW5nYW4gc2FtcGFpIGtldGluZ2dhbGFuLiBDaGVja2xpc3QgcGVybGVuZ2thcGFuLCBsb2dpc3RpaywgdGltLCBkYW4gcmVuY2FuYSBwZW5kYWtpYW4gZGFsYW0gc2F0dSB0ZW1wYXQgXHUyMDE0IDEwMCUgb2ZmbGluZS4iLCAic3RhcnRfdXJsIjogIi4vaW5kZXguaHRtbCIsICJzY29wZSI6ICIuLyIsICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLCAib3JpZW50YXRpb24iOiAicG9ydHJhaXQtcHJpbWFyeSIsICJiYWNrZ3JvdW5kX2NvbG9yIjogIiNGNEY3RjQiLCAidGhlbWVfY29sb3IiOiAiIzE3M0IyOSIsICJsYW5nIjogImlkIiwgImljb25zIjogW3sic3JjIjogImRhdGE6aW1hZ2Uvc3ZnK3htbCwlM0NzdmcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB2aWV3Qm94PScwIDAgMTkyIDE5MiclM0UlM0NyZWN0IHdpZHRoPScxOTInIGhlaWdodD0nMTkyJyByeD0nMzYnIGZpbGw9JyUyMzE3M0IyOScvJTNFJTNDdGV4dCB4PSc5NicgeT0nMTI4JyBmb250LXNpemU9JzEwNCcgdGV4dC1hbmNob3I9J21pZGRsZSclM0UlRjAlOUYlOEYlOTQlRUYlQjglOEYlM0MvdGV4dCUzRSUzQy9zdmclM0UiLCAic2l6ZXMiOiAiMTkyeDE5MiIsICJ0eXBlIjogImltYWdlL3N2Zyt4bWwifSwgeyJzcmMiOiAiZGF0YTppbWFnZS9zdmcreG1sLCUzQ3N2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA1MTIgNTEyJyUzRSUzQ3JlY3Qgd2lkdGg9JzUxMicgaGVpZ2h0PSc1MTInIHJ4PSc5NicgZmlsbD0nJTIzMTczQjI5Jy8lM0UlM0N0ZXh0IHg9JzI1NicgeT0nMzQwJyBmb250LXNpemU9JzI4MCcgdGV4dC1hbmNob3I9J21pZGRsZSclM0UlRjAlOUYlOEYlOTQlRUYlQjglOEYlM0MvdGV4dCUzRSUzQy9zdmclM0UiLCAic2l6ZXMiOiAiNTEyeDUxMiIsICJ0eXBlIjogImltYWdlL3N2Zyt4bWwifV19Cg==">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏔️</text></svg>">
+<style>
+:root{
+  --forest-900:#0E2A1D;
+  --forest-800:#153B27;
+  --forest-700:#1E5631;
+  --forest-600:#2D7A46;
+  --forest-500:#3C9257;
+  --lime:#C6F135;
+  --lime-dark:#A9D91F;
+  --bg:#F4F7F4;
+  --card:#FFFFFF;
+  --text:#16241C;
+  --muted:#67796E;
+  --muted-2:#8C9C93;
+  --border:#E4EAE5;
+  --danger:#E5484D;
+  --danger-bg:#FDECEC;
+  --warning:#F0A83A;
+  --warning-bg:#FFF4E2;
+  --success:#2D9D5F;
+  --success-bg:#E7F7ED;
+  --radius-lg:20px;
+  --radius-md:14px;
+  --radius-sm:10px;
+  --shadow-sm: 0 2px 8px rgba(14,42,29,0.06);
+  --shadow-md: 0 6px 20px rgba(14,42,29,0.10);
+  --shadow-lg: 0 12px 36px rgba(14,42,29,0.16);
+  --nav-h:64px;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{margin:0;font-weight:800;letter-spacing:-0.02em;}
+p{margin:0;}
+button{font-family:inherit;cursor:pointer;}
+input,select,textarea{font-family:inherit;}
+a{color:inherit;text-decoration:none;}
+::selection{background:var(--lime);color:var(--forest-900);}
+
+/* Scrollbar minimal */
+::-webkit-scrollbar{width:8px;height:8px;}
+::-webkit-scrollbar-thumb{background:#D3DDD6;border-radius:8px;}
+
+/* ---------- Layout shells ---------- */
+#app{min-height:100vh;}
+.screen{max-width:520px;margin:0 auto;min-height:100vh;background:var(--bg);position:relative;padding-bottom:calc(var(--nav-h) + 24px);}
+.screen.no-nav{padding-bottom:24px;}
+.screen.wide{max-width:1040px;}
+
+@media (min-width:900px){
+  .screen{max-width:1040px;}
+}
+
+/* ---------- Topbar ---------- */
+.topbar{
+  position:sticky;top:0;z-index:40;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 18px;background:rgba(244,247,244,0.92);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--border);
+}
+.topbar .tb-left{display:flex;align-items:center;gap:10px;min-width:0;}
+.topbar h2{font-size:17px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.tb-sub{font-size:12px;color:var(--muted);margin-top:1px;}
+.icon-btn{
+  width:38px;height:38px;border-radius:50%;border:1px solid var(--border);
+  background:var(--card);display:flex;align-items:center;justify-content:center;
+  font-size:16px;flex:none;box-shadow:var(--shadow-sm);transition:transform .15s;
+}
+.icon-btn:active{transform:scale(0.92);}
+.back-btn{background:none;border:none;font-size:22px;padding:4px 6px 4px 0;color:var(--forest-800);}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:14px 20px;border-radius:14px;border:none;font-weight:700;font-size:15px;
+  transition:transform .12s ease, box-shadow .12s ease; white-space:nowrap;
+}
+.btn:active{transform:scale(0.97);}
+.btn-primary{background:var(--forest-700);color:#fff;box-shadow:0 4px 14px rgba(30,86,49,0.35);}
+.btn-primary:hover{background:var(--forest-600);}
+.btn-lime{background:var(--lime);color:var(--forest-900);box-shadow:0 4px 14px rgba(198,241,53,0.4);}
+.btn-lime:hover{background:var(--lime-dark);}
+.btn-outline{background:var(--card);color:var(--forest-800);border:1.5px solid var(--border);}
+.btn-outline:hover{border-color:var(--forest-500);}
+.btn-danger{background:var(--danger-bg);color:var(--danger);}
+.btn-ghost{background:transparent;color:var(--forest-700);padding:10px 12px;}
+.btn-block{width:100%;}
+.btn-sm{padding:9px 14px;font-size:13px;border-radius:10px;}
+.btn-icon{width:44px;height:44px;padding:0;border-radius:50%;}
+.btn[disabled]{opacity:.5;pointer-events:none;}
+
+.fab{
+  position:fixed;right:20px;bottom:calc(var(--nav-h) + 20px);
+  width:56px;height:56px;border-radius:50%;background:var(--forest-700);color:#fff;
+  border:none;font-size:26px;box-shadow:0 8px 20px rgba(30,86,49,0.4);z-index:35;
+  display:flex;align-items:center;justify-content:center;
+}
+.fab:active{transform:scale(0.92);}
+@media (min-width:900px){.fab{right:calc(50% - 500px);}}
+
+/* ---------- Cards ---------- */
+.card{
+  background:var(--card);border-radius:var(--radius-lg);padding:18px;
+  box-shadow:var(--shadow-sm);border:1px solid var(--border);
+}
+.card + .card{margin-top:12px;}
+.section{padding:16px;}
+.section-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
+.section-title h3{font-size:16px;}
+.link-sm{font-size:13px;font-weight:700;color:var(--forest-700);}
+
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+@media (min-width:640px){.sm\:grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}}
+
+.stat-box{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-md);padding:12px 14px;text-align:center;}
+.stat-box .num{font-size:20px;font-weight:800;color:var(--forest-800);}
+.stat-box .lbl{font-size:11.5px;color:var(--muted);margin-top:2px;}
+
+/* ---------- Landing ---------- */
+.hero{
+  position:relative;min-height:440px;border-radius:0 0 32px 32px;overflow:hidden;
+  background:linear-gradient(180deg, rgba(14,42,29,0.55), rgba(14,42,29,0.88)),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="900" viewBox="0 0 800 900"><rect width="800" height="900" fill="%23274b39"/><polygon points="0,900 150,500 320,700 480,350 650,650 800,450 800,900" fill="%231c3a2c"/><polygon points="0,900 250,600 400,780 600,500 800,700 800,900" fill="%2314301f"/><circle cx="620" cy="180" r="70" fill="%23ffe9a8" opacity="0.85"/></svg>') center/cover no-repeat;
+  padding:20px 22px 32px;display:flex;flex-direction:column;
+}
+.hero-top{display:flex;align-items:center;justify-content:space-between;color:#fff;}
+.brand{display:flex;align-items:center;gap:8px;font-weight:800;font-size:18px;}
+.brand .mark{font-size:22px;}
+.hero-body{flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding-top:60px;}
+.hero h1{color:#fff;font-size:34px;line-height:1.12;}
+.hero h1 span{color:var(--lime);}
+.hero p{color:#E7EFE9;margin-top:12px;font-size:15px;line-height:1.5;max-width:340px;}
+.hero-ctas{display:flex;flex-direction:column;gap:10px;margin-top:22px;max-width:320px;}
+.hero-ctas .btn{width:100%;}
+
+.tagline-strip{padding:20px 18px 6px;}
+.tagline-strip h3{font-size:17px;color:var(--forest-800);}
+
+.feature-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-md);padding:14px;box-shadow:var(--shadow-sm);}
+.feature-card .fi{width:38px;height:38px;border-radius:10px;background:var(--success-bg);display:flex;align-items:center;justify-content:center;font-size:19px;margin-bottom:8px;}
+.feature-card h4{font-size:13.5px;margin-bottom:4px;}
+.feature-card p{font-size:12px;color:var(--muted);line-height:1.4;}
+
+.landing-footer{padding:26px 18px 8px;text-align:center;color:var(--muted-2);font-size:12px;}
+
+/* ---------- Bottom nav ---------- */
+.bottom-nav{
+  position:fixed;left:0;right:0;bottom:0;height:var(--nav-h);z-index:50;
+  background:var(--card);border-top:1px solid var(--border);
+  display:flex;align-items:stretch;justify-content:space-around;
+  box-shadow:0 -4px 16px rgba(14,42,29,0.06);
+  padding-bottom:env(safe-area-inset-bottom);
+}
+.nav-item{
+  flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  color:var(--muted);font-size:10.5px;font-weight:700;background:none;border:none;
+}
+.nav-item .ni{font-size:19px;width:34px;height:26px;display:flex;align-items:center;justify-content:center;border-radius:10px;transition:.15s;}
+.nav-item.active{color:var(--forest-700);}
+.nav-item.active .ni{background:var(--success-bg);}
+@media (min-width:900px){.bottom-nav{max-width:1040px;left:50%;transform:translateX(-50%);border-radius:20px 20px 0 0;}}
+
+/* ---------- Progress ---------- */
+.progress-bar{width:100%;height:9px;border-radius:6px;background:#EAF0EB;overflow:hidden;}
+.progress-bar > i{display:block;height:100%;border-radius:6px;background:linear-gradient(90deg,var(--forest-600),var(--lime));transition:width .5s cubic-bezier(.2,.8,.2,1);}
+.progress-ring-wrap{position:relative;width:132px;height:132px;margin:0 auto;}
+.progress-ring-wrap svg{transform:rotate(-90deg);}
+.progress-ring-label{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.progress-ring-label .pct{font-size:28px;font-weight:800;color:var(--forest-800);}
+.progress-ring-label .lbl{font-size:11px;color:var(--muted);}
+
+.badge{display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:20px;font-size:11.5px;font-weight:700;}
+.badge-success{background:var(--success-bg);color:var(--success);}
+.badge-warning{background:var(--warning-bg);color:var(--warning);}
+.badge-danger{background:var(--danger-bg);color:var(--danger);}
+.badge-muted{background:#EEF2EE;color:var(--muted);}
+
+/* ---------- Forms ---------- */
+.field{margin-bottom:14px;}
+.field label{display:block;font-size:12.5px;font-weight:700;color:var(--forest-800);margin-bottom:6px;}
+.field .hint{font-size:11px;color:var(--muted-2);margin-top:4px;}
+.field input[type=text],.field input[type=date],.field input[type=time],.field input[type=number],.field input[type=tel],.field select,.field textarea{
+  width:100%;padding:12px 14px;border-radius:12px;border:1.5px solid var(--border);background:#FBFCFB;font-size:14.5px;color:var(--text);
+}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--forest-500);background:#fff;}
+.field textarea{resize:vertical;min-height:70px;}
+.stepper{display:flex;align-items:center;gap:10px;}
+.stepper button{width:38px;height:38px;border-radius:10px;border:1.5px solid var(--border);background:#fff;font-size:18px;font-weight:800;color:var(--forest-800);}
+.stepper input{text-align:center;width:100%;}
+.chip-select{display:flex;flex-wrap:wrap;gap:8px;}
+.chip{padding:9px 14px;border-radius:20px;border:1.5px solid var(--border);background:#fff;font-size:13px;font-weight:600;color:var(--text);}
+.chip.active{background:var(--forest-700);color:#fff;border-color:var(--forest-700);}
+.role-chip.active{background:var(--lime);color:var(--forest-900);border-color:var(--lime);}
+
+/* Segmented tabs */
+.tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:2px;-ms-overflow-style:none;scrollbar-width:none;}
+.tabs::-webkit-scrollbar{display:none;}
+.tab-btn{flex:none;padding:9px 15px;border-radius:20px;border:1.5px solid var(--border);background:#fff;font-size:13px;font-weight:700;color:var(--muted);}
+.tab-btn.active{background:var(--forest-700);color:#fff;border-color:var(--forest-700);}
+
+/* ---------- Checklist rows ---------- */
+.check-row{display:flex;align-items:center;gap:12px;padding:12px 4px;border-bottom:1px solid var(--border);}
+.check-row:last-child{border-bottom:none;}
+.checkbox{
+  width:26px;height:26px;border-radius:8px;border:2px solid #C9D4CC;flex:none;
+  display:flex;align-items:center;justify-content:center;background:#fff;transition:.15s;
+}
+.checkbox.on{background:var(--forest-700);border-color:var(--forest-700);color:#fff;transform:scale(1.05);}
+.check-row .ci-name{flex:1;font-size:14.5px;font-weight:600;}
+.check-row.done .ci-name{color:var(--muted-2);text-decoration:line-through;}
+.check-row .ci-meta{font-size:11.5px;color:var(--muted);white-space:nowrap;}
+.cat-card{display:flex;align-items:center;gap:14px;padding:14px;}
+.cat-card .cat-icon{width:44px;height:44px;border-radius:12px;background:var(--success-bg);display:flex;align-items:center;justify-content:center;font-size:20px;flex:none;}
+.cat-card .cat-body{flex:1;min-width:0;}
+.cat-card .cat-top{display:flex;justify-content:space-between;font-size:13.5px;font-weight:700;margin-bottom:6px;}
+.cat-card .cat-sub{font-size:11.5px;color:var(--muted);margin-bottom:6px;}
+.chev{color:var(--muted-2);font-size:18px;}
+
+/* Member cards */
+.member-card{display:flex;align-items:center;gap:12px;padding:13px;}
+.avatar{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--forest-600),var(--forest-800));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex:none;}
+.member-card .m-name{font-weight:700;font-size:14px;}
+.member-card .m-role{font-size:11.5px;color:var(--forest-700);font-weight:700;}
+.member-card .m-phone{font-size:11.5px;color:var(--muted);margin-top:1px;}
+
+/* Carrier cards */
+.carrier-card{padding:15px;}
+.carrier-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.carrier-head .ch-left{display:flex;align-items:center;gap:10px;}
+.carrier-dot{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;color:#fff;flex:none;}
+
+/* Timeline */
+.timeline{position:relative;padding-left:26px;}
+.timeline:before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:var(--border);}
+.tl-item{position:relative;padding-bottom:18px;}
+.tl-item:last-child{padding-bottom:0;}
+.tl-dot{position:absolute;left:-26px;top:2px;width:20px;height:20px;border-radius:50%;background:var(--forest-700);border:3px solid var(--success-bg);}
+.tl-time{font-size:12px;font-weight:800;color:var(--forest-700);}
+.tl-title{font-size:14px;font-weight:700;margin-top:2px;}
+.tl-meta{font-size:11.5px;color:var(--muted);margin-top:2px;}
+
+/* Empty state */
+.empty-state{padding:44px 20px;text-align:center;}
+.empty-state .es-icon{font-size:40px;margin-bottom:10px;}
+.empty-state h4{font-size:15px;margin-bottom:6px;}
+.empty-state p{font-size:12.5px;color:var(--muted);max-width:280px;margin:0 auto 16px;line-height:1.5;}
+
+/* Toast */
+.toast-wrap{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:200;display:flex;flex-direction:column;gap:8px;align-items:center;width:100%;pointer-events:none;}
+.toast{background:var(--forest-900);color:#fff;padding:12px 18px;border-radius:12px;font-size:13.5px;font-weight:600;box-shadow:var(--shadow-lg);display:flex;align-items:center;gap:8px;animation:toastIn .25s ease;max-width:88%;}
+.toast.err{background:var(--danger);}
+.toast.ok{background:var(--forest-700);}
+@keyframes toastIn{from{opacity:0;transform:translateY(-14px);}to{opacity:1;transform:translateY(0);}}
+
+/* Modal */
+.modal-overlay{position:fixed;inset:0;background:rgba(14,26,20,0.55);z-index:100;display:flex;align-items:flex-end;justify-content:center;animation:fadeIn .18s ease;}
+@media (min-width:640px){.modal-overlay{align-items:center;}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+.modal-box{background:#fff;width:100%;max-width:520px;max-height:88vh;overflow-y:auto;border-radius:22px 22px 0 0;padding:20px;animation:slideUp .22s cubic-bezier(.2,.8,.2,1);}
+@media (min-width:640px){.modal-box{border-radius:22px;}}
+@keyframes slideUp{from{transform:translateY(30px);opacity:.6;}to{transform:translateY(0);opacity:1;}}
+.modal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
+.modal-head h3{font-size:17px;}
+.modal-close{background:#F0F3F0;border:none;width:32px;height:32px;border-radius:50%;font-size:15px;color:var(--muted);}
+.modal-actions{display:flex;gap:10px;margin-top:6px;position:sticky;bottom:0;background:#fff;padding-top:10px;}
+.modal-actions .btn{flex:1;}
+
+/* Weight bars */
+.wbar-row{margin-bottom:12px;}
+.wbar-row .wb-top{display:flex;justify-content:space-between;font-size:12.5px;font-weight:700;margin-bottom:5px;}
+.wbar-track{height:10px;background:#EAF0EB;border-radius:6px;overflow:hidden;}
+.wbar-fill{height:100%;border-radius:6px;}
+
+/* Loading */
+.spinner{width:26px;height:26px;border:3px solid #DCE6DF;border-top-color:var(--forest-700);border-radius:50%;animation:spin .7s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.loading-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 20px;gap:12px;color:var(--muted);font-size:13px;}
+
+/* Trip banner list */
+.trip-mini{display:flex;align-items:center;gap:12px;padding:13px;}
+.trip-mini .tm-icon{width:44px;height:44px;border-radius:12px;background:var(--forest-800);color:#fff;display:flex;align-items:center;justify-content:center;font-size:19px;flex:none;}
+.trip-mini .tm-name{font-weight:700;font-size:14px;}
+.trip-mini .tm-sub{font-size:11.5px;color:var(--muted);margin-top:1px;}
+
+.quickmenu{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;}
+.qm-item{display:flex;flex-direction:column;align-items:center;gap:6px;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:10px 4px;font-size:10.5px;font-weight:700;color:var(--forest-800);}
+.qm-item .qi{width:32px;height:32px;border-radius:9px;background:var(--success-bg);display:flex;align-items:center;justify-content:center;font-size:15px;}
+
+.divider{height:1px;background:var(--border);margin:14px 0;}
+.muted{color:var(--muted);}
+.small{font-size:12px;}
+.mt-8{margin-top:8px;}.mt-12{margin-top:12px;}.mt-16{margin-top:16px;}.mt-20{margin-top:20px;}
+.flex{display:flex;}.items-center{align-items:center;}.justify-between{justify-content:space-between;}.gap-8{gap:8px;}.gap-12{gap:12px;}
+
+@media print{
+  .bottom-nav,.fab,.topbar .icon-btn,.no-print{display:none !important;}
+  body{background:#fff;}
+  .screen{max-width:100%;padding-bottom:0;}
+  .card{box-shadow:none;border:1px solid #ccc;break-inside:avoid;}
+}
+
+/* ---------------- Auth / login screen ---------------- */
+.auth-wrap{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:28px 22px;max-width:420px;margin:0 auto;}
+.auth-logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;color:var(--forest-800);margin-bottom:28px;}
+.auth-logo .mark{font-size:26px;}
+.auth-field{margin-top:12px;}
+.auth-field label{display:block;font-size:12.5px;font-weight:700;color:var(--muted);margin-bottom:6px;}
+.auth-field input{width:100%;padding:13px 14px;border-radius:12px;border:1.5px solid var(--border);font-size:15px;background:var(--card);}
+.auth-field input:focus{outline:none;border-color:var(--forest-500);}
+.auth-divider{display:flex;align-items:center;gap:10px;margin:18px 0;color:var(--muted-2);font-size:12px;}
+.auth-divider::before,.auth-divider::after{content:'';flex:1;height:1px;background:var(--border);}
+.btn-google{background:#fff;color:var(--text);border:1.5px solid var(--border);}
+.auth-switch{text-align:center;margin-top:16px;font-size:13.5px;color:var(--muted);}
+.auth-switch b{color:var(--forest-700);cursor:pointer;}
+.auth-err{background:var(--danger-bg);color:var(--danger);border-radius:10px;padding:10px 12px;font-size:13px;margin-top:12px;}
+.loading-wrap{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;padding:24px;}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div id="toastWrap" class="toast-wrap"></div>
+<div id="modalRoot"></div>
+
+<!-- Firebase (compat) SDKs — must load before the app script below -->
+<script src="https://www.gstatic.com/firebasejs/12.11.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.11.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.11.0/firebase-firestore-compat.js"></script>
+
+<script>
+/* =========================================================
+   ChecklistSek — cloud-synced hiking prep app
+   Vanilla JS + Firebase Auth + Cloud Firestore. No build step.
+========================================================= */
+
+/* ---------------- Firebase config ----------------
+   TODO: replace these values with the config object from
+   Firebase Console → Project settings → General → Your apps → SDK setup.
+   See the setup guide provided alongside this file. */
+const firebaseConfig = {
+  apiKey: "AIzaSyDGENjgqRIOv1DJu3uwDbLkwYCjjuUj0WE",
+  authDomain: "checklistsek.firebaseapp.com",
+  projectId: "checklistsek",
+  storageBucket: "checklistsek.firebasestorage.app",
+  messagingSenderId: "83860087564",
+  appId: "1:83860087564:web:a8f390bf9d393525bb9f29",
+  measurementId: "G-HSTD655Z53"
+};
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const dbFs = firebase.firestore();
+const googleProvider = new firebase.auth.GoogleAuthProvider();
+
+let currentUser = null; // set by onAuthStateChanged below
+
+/* ---------------- Firestore data layer ----------------
+   Keeps the exact same function names/signatures the rest of the
+   app already calls (idbGet, idbPut, idbGetAll, ...) so none of the
+   screen/view code below needs to change. Data lives per-user at:
+   users/{uid}/{storeName}/{docId}
+========================================================= */
+const STORES = ['trips','members','checklistItems','carriers','itinerary','routePoints','categories','settings'];
+
+function userCol(storeName){
+  if(!currentUser) throw new Error('Belum login');
+  return dbFs.collection('users').doc(currentUser.uid).collection(storeName);
+}
+// Kept for compatibility with init(); Firestore needs no schema/open step,
+// just a signed-in user, which is guaranteed before this is ever called.
+function openDB(){ return Promise.resolve(true); }
+
+async function idbGetAll(storeName){
+  const snap = await userCol(storeName).get();
+  return snap.docs.map(d=>({id:d.id, ...d.data()}));
+}
+async function idbGetAllByTrip(storeName, tripId){
+  const snap = await userCol(storeName).where('tripId','==',tripId).get();
+  return snap.docs.map(d=>({id:d.id, ...d.data()}));
+}
+async function idbGet(storeName, id){
+  if(id==null) return undefined;
+  const doc = await userCol(storeName).doc(String(id)).get();
+  return doc.exists ? {id:doc.id, ...doc.data()} : undefined;
+}
+async function idbPut(storeName, obj){
+  const id = obj.id!=null ? String(obj.id) : uid();
+  const {id:_omit, ...data} = obj;
+  await userCol(storeName).doc(id).set(data, {merge:false});
+  return {id, ...data};
+}
+async function idbDelete(storeName, id){
+  await userCol(storeName).doc(String(id)).delete();
+  return true;
+}
+async function idbDeleteByTrip(storeName, tripId){
+  const items = await idbGetAllByTrip(storeName, tripId);
+  const batch = dbFs.batch();
+  items.forEach(it=> batch.delete(userCol(storeName).doc(it.id)));
+  if(items.length) await batch.commit();
+}
+
+function uid(){
+  if(window.crypto && crypto.randomUUID) return crypto.randomUUID();
+  return 'id-'+Date.now()+'-'+Math.random().toString(16).slice(2);
+}
+
+/* ---------------- Master checklist data ---------------- */
+const CATEGORY_DEFS = [
+  {key:'utama', label:'Perlengkapan Utama', icon:'🎒'},
+  {key:'camp', label:'Camp & Tidur', icon:'⛺'},
+  {key:'pakaian', label:'Pakaian', icon:'🧥'},
+  {key:'safety', label:'Safety & Navigasi', icon:'🩹'},
+  {key:'logistik', label:'Logistik Makanan', icon:'🥫'},
+  {key:'air', label:'Air', icon:'💧'},
+];
+const CATEGORY_MAP = Object.fromEntries(CATEGORY_DEFS.map(c=>[c.key,c]));
+
+/* ---------------- Custom categories (per-trip, stored in Firestore) ---------------- */
+const CATEGORY_ICON_CHOICES = ['📦','🧰','🔧','🍫','🧴','🧵','🎣','🐾','📷','🚲','🏕️','🧊','🌙','⚙️','🎒','🧢','⛰️','🔥'];
+async function getCustomCategories(tripId){
+  const rows = await idbGetAllByTrip('categories', tripId);
+  return rows
+    .sort((a,b)=>(a.order||0)-(b.order||0))
+    .map(c=>({key:c.id, label:c.label, icon:c.icon||'📦', custom:true}));
+}
+async function getCategoriesForTrip(tripId){
+  return [...CATEGORY_DEFS, ...(await getCustomCategories(tripId))];
+}
+async function getCategoryByKey(tripId, catKey){
+  if(CATEGORY_MAP[catKey]) return CATEGORY_MAP[catKey];
+  const custom = await getCustomCategories(tripId);
+  return custom.find(c=>c.key===catKey) || CATEGORY_DEFS[0];
+}
+
+const DEFAULT_ITEMS = {
+  utama:[
+    ['Carrier 60L',1,2.1],['Daypack',1,0.4],['Trekking pole',2,0.25],['Headlamp',1,0.1],
+    ['Baterai cadangan',4,0.05],['Multitool',1,0.25],['Dry bag',2,0.1],['Trash bag',5,0.02],
+    ['Rain cover',1,0.15],['Gaiter',1,0.15],
+  ],
+  camp:[
+    ['Tenda',1,2.5],['Flysheet',1,0.8],['Footprint',1,0.3],['Sleeping bag',1,0.9],['Matras',1,0.4],
+    ['Bantal',1,0.15],['Kompor',1,0.3],['Gas',1,0.25],['Nesting',1,0.35],['Korek tahan air',1,0.02],['Lampu tenda',1,0.15],
+  ],
+  pakaian:[
+    ['Jaket',1,0.5],['Rain jacket',1,0.3],['Base layer',2,0.2],['Celana trekking',1,0.3],['Kaos kaki',3,0.05],
+    ['Buff',1,0.03],['Topi',1,0.08],['Sepatu',1,0.8],['Sandal camp',1,0.2],['Pakaian ganti',1,0.3],
+  ],
+  safety:[
+    ['P3K',1,0.3],['Obat pribadi',1,0.1],['Emergency blanket',1,0.06],['Peluit',1,0.01],['Kompas',1,0.05],
+    ['GPS',1,0.1],['Offline map',1,0.01],['Power bank',1,0.3],['Charger',1,0.1],['Identitas',1,0.01],
+  ],
+  logistik:[
+    ['Beras / nasi instan',1,0.5],['Lauk',1,0.3],['Sarapan',1,0.2],['Snack',2,0.1],['Energy bar',2,0.05],
+    ['Kopi / teh',1,0.1],['Bumbu',1,0.15],['Gas',1,0.25],['Sabun cuci',1,0.1],['Kantong sampah',3,0.02],
+  ],
+  air:[
+    ['Botol minum',1,0.15],['Hydration bladder',1,0.15],['Air awal',4,1.0],['Elektrolit',2,0.05],
+    ['Filter air',1,0.2],['Tablet pemurni',1,0.02],['Cadangan air darurat',1,1.0],
+  ],
+};
+
+const ROLE_OPTIONS = ['Leader','Navigator','Logistik','Medis','Dokumentasi','Sweeper','Member'];
+const DURATION_OPTIONS = [
+  {key:'1hari', label:'1 Hari', days:1, nights:0},
+  {key:'2h1m', label:'2 Hari 1 Malam', days:2, nights:1},
+  {key:'3h2m', label:'3 Hari 2 Malam', days:3, nights:2},
+  {key:'4h3m', label:'4 Hari 3 Malam', days:4, nights:3},
+  {key:'5h4m', label:'5 Hari 4 Malam', days:5, nights:4},
+  {key:'custom', label:'Custom', days:null, nights:null},
+];
+function getDuration(trip){
+  const d = DURATION_OPTIONS.find(x=>x.key===trip.durationType) || DURATION_OPTIONS[2];
+  if(d.key==='custom') return {label:'Custom', days:trip.customDays||1, nights:trip.customNights||0};
+  return {label:d.label, days:d.days, nights:d.nights};
+}
+
+/* ---------------- App state ---------------- */
+const state = { currentTripId:null, checklistFilter:'all', checklistCatFilter:'all', logistikTab:'carrier', itineraryTab:'itinerary', routeDir:'naik' };
+
+async function getSetting(key){
+  const row = await idbGet('settings', key);
+  return row ? row.value : null;
+}
+async function setSetting(key, value){
+  await idbPut('settings', {id:key, value});
+}
+
+/* ---------------- Router ---------------- */
+function navigate(hash){ location.hash = hash; }
+window.addEventListener('hashchange', render);
+
+/* ---------------- Auth: login / register screen ---------------- */
+let authMode = 'login'; // 'login' | 'register'
+function ViewLogin(){
+  return `<div class="auth-wrap">
+    <div class="auth-logo"><span class="mark">🏔️</span> ChecklistSek</div>
+    <h2 style="font-size:22px;margin-bottom:4px;">${authMode==='login'?'Masuk ke akunmu':'Buat akun baru'}</h2>
+    <p class="small muted">${authMode==='login'?'Data pendakianmu tersimpan di cloud dan bisa diakses dari perangkat manapun.':'Daftar untuk mulai menyimpan data pendakianmu di cloud.'}</p>
+    <button class="btn btn-google btn-block mt-16" id="googleBtn">🔎 Lanjutkan dengan Google</button>
+    <div class="auth-divider">atau dengan email</div>
+    <div class="auth-field"><label>Email</label><input type="email" id="authEmail" placeholder="nama@email.com" autocomplete="email"></div>
+    <div class="auth-field"><label>Kata Sandi</label><input type="password" id="authPass" placeholder="Minimal 6 karakter" autocomplete="${authMode==='login'?'current-password':'new-password'}"></div>
+    <div id="authErr"></div>
+    <button class="btn btn-primary btn-block mt-16" id="authSubmitBtn">${authMode==='login'?'Masuk':'Daftar'}</button>
+    <div class="auth-switch">${authMode==='login'
+      ? `Belum punya akun? <b id="toRegister">Daftar</b>`
+      : `Sudah punya akun? <b id="toLogin">Masuk</b>`}</div>
+  </div>`;
+}
+function bindLogin(){
+  const errBox = document.getElementById('authErr');
+  const showErr = (msg)=>{ errBox.innerHTML = `<div class="auth-err">${escapeHtml(msg)}</div>`; };
+  document.getElementById('googleBtn').onclick = async ()=>{
+    try{ await auth.signInWithPopup(googleProvider); }
+    catch(err){ showErr(authErrMessage(err)); }
+  };
+  const toReg = document.getElementById('toRegister');
+  if(toReg) toReg.onclick = ()=>{ authMode='register'; render(); };
+  const toLog = document.getElementById('toLogin');
+  if(toLog) toLog.onclick = ()=>{ authMode='login'; render(); };
+  document.getElementById('authSubmitBtn').onclick = async ()=>{
+    const email = document.getElementById('authEmail').value.trim();
+    const pass = document.getElementById('authPass').value;
+    if(!email || !pass){ showErr('Isi email dan kata sandi terlebih dahulu.'); return; }
+    try{
+      if(authMode==='login'){ await auth.signInWithEmailAndPassword(email, pass); }
+      else{ await auth.createUserWithEmailAndPassword(email, pass); }
+    }catch(err){ showErr(authErrMessage(err)); }
+  };
+}
+function authErrMessage(err){
+  const map = {
+    'auth/invalid-email':'Format email tidak valid.',
+    'auth/user-not-found':'Akun tidak ditemukan. Coba daftar dulu.',
+    'auth/wrong-password':'Kata sandi salah.',
+    'auth/invalid-credential':'Email atau kata sandi salah.',
+    'auth/email-already-in-use':'Email ini sudah terdaftar. Coba masuk.',
+    'auth/weak-password':'Kata sandi minimal 6 karakter.',
+    'auth/popup-closed-by-user':'Login dibatalkan.',
+  };
+  return map[err.code] || (err.message || 'Terjadi kesalahan, coba lagi.');
+}
+async function logout(){
+  confirmModal('Keluar dari akun ini? Kamu perlu login lagi untuk mengakses data pendakianmu.', async ()=>{
+    await auth.signOut();
+  }, false);
+}
+
+async function render(){
+  const app = document.getElementById('app');
+  if(!currentUser){ app.innerHTML = ViewLogin(); bindLogin(); return; }
+
+  const hash = location.hash || '#/dashboard';
+  const [path, queryStr] = hash.slice(2).split('?');
+  const q = Object.fromEntries(new URLSearchParams(queryStr||''));
+  const route = '/'+path;
+
+  try{
+    if(route==='/' || route===''){ app.innerHTML = await ViewLanding(); bindLanding(); return; }
+    if(route==='/dashboard'){ app.innerHTML = await ViewDashboard(); bindNav('dashboard'); bindDashboard(); return; }
+    if(route==='/trip-form'){ app.innerHTML = await ViewTripForm(q.edit||null); bindTripForm(q.edit||null); return; }
+    if(route==='/checklist'){ app.innerHTML = await ViewChecklist(); bindNav('checklist'); bindChecklist(); return; }
+    if(route==='/checklist-cat'){ app.innerHTML = await ViewChecklistCategory(q.cat); bindChecklistCategory(q.cat); return; }
+    if(route==='/logistik'){ app.innerHTML = await ViewLogistik(); bindNav('logistik'); bindLogistik(); return; }
+    if(route==='/tim'){ app.innerHTML = await ViewTim(); bindNav('tim'); bindTim(); return; }
+    if(route==='/itinerary'){ app.innerHTML = await ViewItinerary(); bindItinerary(); return; }
+    if(route==='/emergency'){ app.innerHTML = await ViewEmergency(); bindEmergency(); return; }
+    if(route==='/ai-advisor'){ app.innerHTML = await ViewAI(); bindAI(); return; }
+    if(route==='/riwayat'){ app.innerHTML = await ViewRiwayat(); bindNav('riwayat'); bindRiwayat(); return; }
+    if(route==='/settings'){ app.innerHTML = await ViewSettings(); bindSettings(); return; }
+    app.innerHTML = await ViewLanding(); bindLanding();
+  }catch(err){
+    console.error(err);
+    app.innerHTML = `<div class="loading-wrap"><div class="es-icon">⚠️</div><p>Terjadi kesalahan memuat halaman.<br>${err.message||''}</p><button class="btn btn-outline" onclick="navigate('#/dashboard')">Kembali ke Dashboard</button></div>`;
+  }
+}
+
+/* ---------------- Helpers: toast / modal / confirm ---------------- */
+function toast(msg, type=''){
+  const wrap = document.getElementById('toastWrap');
+  const el = document.createElement('div');
+  el.className = 'toast '+type;
+  el.innerHTML = (type==='err'?'⚠️ ':'✅ ')+msg;
+  wrap.appendChild(el);
+  setTimeout(()=>{ el.style.transition='opacity .3s'; el.style.opacity='0'; setTimeout(()=>el.remove(),300); }, 2200);
+}
+function closeModal(){ document.getElementById('modalRoot').innerHTML=''; }
+function openModal(title, bodyHtml, opts={}){
+  const root = document.getElementById('modalRoot');
+  root.innerHTML = `
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-box">
+      <div class="modal-head"><h3>${title}</h3><button class="modal-close" onclick="closeModal()">✕</button></div>
+      <div id="modalBody">${bodyHtml}</div>
+    </div>
+  </div>`;
+  document.getElementById('modalOverlay').addEventListener('click', (e)=>{ if(e.target.id==='modalOverlay') closeModal(); });
+}
+function confirmModal(message, onConfirm, danger=true){
+  openModal('Konfirmasi', `
+    <p class="small" style="font-size:14px;line-height:1.5;">${message}</p>
+    <div class="modal-actions">
+      <button class="btn btn-outline btn-block" onclick="closeModal()">Batal</button>
+      <button class="btn ${danger?'btn-danger':'btn-primary'} btn-block" id="confirmYes">Ya, Lanjutkan</button>
+    </div>`);
+  document.getElementById('confirmYes').onclick = ()=>{ closeModal(); onConfirm(); };
+}
+
+/* ---------------- Formatting helpers ---------------- */
+function fmtDate(iso){
+  if(!iso) return '-';
+  const d = new Date(iso+'T00:00:00');
+  if(isNaN(d)) return iso;
+  return d.toLocaleDateString('id-ID', {day:'2-digit', month:'short', year:'numeric'});
+}
+function fmtKg(n){ return (Math.round((n||0)*100)/100).toLocaleString('id-ID',{minimumFractionDigits:1,maximumFractionDigits:2})+' kg'; }
+function fmtNum(n){ return (n||0).toLocaleString('id-ID'); }
+function daysUntil(iso){
+  if(!iso) return null;
+  const today = new Date(); today.setHours(0,0,0,0);
+  const target = new Date(iso+'T00:00:00');
+  return Math.round((target-today)/86400000);
+}
+function statusFromProgress(pct){
+  if(pct>=100) return {label:'Siap Berangkat', cls:'success', dot:'🟢'};
+  if(pct>=80) return {label:'Hampir Siap', cls:'success', dot:'🟢'};
+  if(pct>=50) return {label:'Persiapan', cls:'warning', dot:'🟡'};
+  return {label:'Belum Siap', cls:'danger', dot:'🔴'};
+}
+function initials(name){
+  return (name||'?').trim().split(/\s+/).slice(0,2).map(w=>w[0]).join('').toUpperCase();
+}
+function escapeHtml(s){ return (s==null?'':String(s)).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+/* ---------------- Data aggregation helpers ---------------- */
+async function getAllTrips(){
+  const trips = await idbGetAll('trips');
+  return trips.sort((a,b)=> new Date(a.startDate||'2999-01-01') - new Date(b.startDate||'2999-01-01'));
+}
+async function getUpcomingTrip(){
+  const trips = await getAllTrips();
+  if(!trips.length) return null;
+  const currentId = state.currentTripId || await getSetting('lastTripId');
+  if(currentId){
+    const t = trips.find(x=>x.id===currentId);
+    if(t) return t;
+  }
+  const today = new Date().toISOString().slice(0,10);
+  return trips.find(t=>t.startDate>=today) || trips[trips.length-1];
+}
+async function ensureCurrentTrip(){
+  if(state.currentTripId){
+    const t = await idbGet('trips', state.currentTripId);
+    if(t) return t;
+  }
+  const t = await getUpcomingTrip();
+  if(t){ state.currentTripId = t.id; await setSetting('lastTripId', t.id); }
+  return t;
+}
+async function checklistProgress(tripId){
+  const items = await idbGetAllByTrip('checklistItems', tripId);
+  const total = items.length;
+  const done = items.filter(i=>i.checked).length;
+  const pct = total? Math.round((done/total)*100) : 0;
+  return {total, done, pct, items};
+}
+async function categoryProgress(tripId, catKey){
+  const items = await idbGetAllByTrip('checklistItems', tripId);
+  const catItems = items.filter(i=>i.category===catKey);
+  const total = catItems.length;
+  const done = catItems.filter(i=>i.checked).length;
+  return {total, done, pct: total? Math.round((done/total)*100):0, items:catItems};
+}
+async function totalWeight(tripId){
+  const items = await idbGetAllByTrip('checklistItems', tripId);
+  return items.reduce((s,i)=> s + (i.qty||0)*(i.unitWeight||0), 0);
+}
+async function weightByCarrier(tripId){
+  const items = await idbGetAllByTrip('checklistItems', tripId);
+  const carriers = await idbGetAllByTrip('carriers', tripId);
+  const map = {};
+  carriers.forEach(c=> map[c.id] = {carrier:c, weight:0, count:0});
+  let unassigned = 0, unassignedCount=0;
+  items.forEach(i=>{
+    const w = (i.qty||0)*(i.unitWeight||0);
+    if(i.carrierId && map[i.carrierId]){ map[i.carrierId].weight += w; map[i.carrierId].count++; }
+    else { unassigned += w; unassignedCount++; }
+  });
+  return {byCarrier:Object.values(map), unassigned, unassignedCount};
+}
+
+/* ---------------- Seed default checklist for a trip ---------------- */
+async function seedChecklist(tripId){
+  for(const cat of CATEGORY_DEFS){
+    for(const [name, qty, unitWeight] of DEFAULT_ITEMS[cat.key]){
+      await idbPut('checklistItems', {
+        id:uid(), tripId, category:cat.key, name, qty, unitWeight, checked:false, carrierId:null, isCustom:false
+      });
+    }
+  }
+}
+
+/* ---------------- Recommendation engine (rule-based) ---------------- */
+function computeRecommendations(trip){
+  const dur = getDuration(trip);
+  const pax = trip.pendakiCount || 1;
+  const days = dur.days || 1;
+  const rec = {};
+  rec['Beras / nasi instan'] = Math.max(1, Math.ceil(pax*days*0.35));
+  rec['Lauk'] = Math.max(1, pax*days);
+  rec['Sarapan'] = Math.max(1, pax*days);
+  rec['Snack'] = Math.max(1, pax*days*2);
+  rec['Energy bar'] = Math.max(1, pax*days);
+  rec['Kantong sampah'] = Math.max(1, Math.ceil(days*1.5));
+  rec['Gas'] = Math.max(1, Math.ceil((pax*days)/8));
+  rec['Air awal'] = Math.max(pax, Math.ceil(pax*days*2.8));
+  rec['Baterai cadangan'] = Math.max(2, pax>=4? pax : 2);
+  rec['Power bank'] = Math.max(1, Math.ceil(pax/2));
+  rec['Pakaian ganti'] = Math.max(1, dur.nights);
+  rec['Kaos kaki'] = Math.max(2, dur.nights+1);
+  return {dur, pax, rec};
+}
+function waterRecommendation(pax, days, perPersonPerDay, sourceLevel){
+  let liters = pax*days*perPersonPerDay;
+  let low = liters*0.85, high = liters*1.15;
+  if(sourceLevel==='ada'){ low*=0.6; high*=0.75; }
+  else if(sourceLevel==='melimpah'){ low*=0.35; high*=0.5; }
+  return {low:Math.round(low), high:Math.round(high)};
+}
+
+/* =========================================================
+   VIEWS
+========================================================= */
+
+/* ---- Landing ---- */
+async function ViewLanding(){
+  const features = [
+    ['🎒','Checklist Pintar','Tidak ada perlengkapan yang terlupa.'],
+    ['⚖️','Pembagian Carrier','Atur barang dan berat tiap carrier.'],
+    ['🥫','Smart Logistik','Estimasi makanan, air, dan kebutuhan berdasarkan durasi.'],
+    ['🗺️','Rencana Jalur','Catat jalur naik, turun, dan titik penting.'],
+    ['👥','Manajemen Tim','Atur anggota dan pembagian tugas.'],
+    ['📴','Offline First','Data tetap tersedia tanpa koneksi internet.'],
+  ];
+  return `
+  <div class="screen no-nav">
+    <div class="hero">
+      <div class="hero-top">
+        <div class="brand"><span class="mark">🏔️</span> ChecklistSek</div>
+        <button class="icon-btn" onclick="navigate('#/riwayat')" style="background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.3);color:#fff;">☰</button>
+      </div>
+      <div class="hero-body">
+        <h1>Jangan sampai <span>ketinggalan.</span></h1>
+        <p>Checklist perlengkapan, logistik, tim, dan rencana pendakian dalam satu tempat.</p>
+        <div class="hero-ctas">
+          <button class="btn btn-lime" id="btnStart">Mulai Checklist →</button>
+          <button class="btn btn-outline" id="btnSaved" style="background:rgba(255,255,255,0.1);color:#fff;border-color:rgba(255,255,255,0.4);">Lihat Pendakian Tersimpan</button>
+        </div>
+      </div>
+    </div>
+    <div class="tagline-strip"><h3>Fitur Unggulan</h3></div>
+    <div class="section" style="padding-top:6px;">
+      <div class="grid-2">
+        ${features.map(f=>`
+          <div class="feature-card">
+            <div class="fi">${f[0]}</div>
+            <h4>${f[1]}</h4>
+            <p>${f[2]}</p>
+          </div>`).join('')}
+      </div>
+    </div>
+    <div class="landing-footer">ChecklistSek · Persiapan pendakian offline-first<br>Data tersimpan aman di perangkatmu.</div>
+  </div>`;
+}
+function bindLanding(){
+  document.getElementById('btnStart').onclick = ()=> navigate('#/trip-form');
+  document.getElementById('btnSaved').onclick = ()=> navigate('#/riwayat');
+}
+
+/* ---- Bottom nav (shared) ---- */
+function bottomNavHtml(active){
+  const items = [
+    ['dashboard','🏠','Home','#/dashboard'],
+    ['checklist','✅','Checklist','#/checklist'],
+    ['logistik','🎒','Logistik','#/logistik'],
+    ['tim','👥','Tim','#/tim'],
+    ['riwayat','🕐','Riwayat','#/riwayat'],
+  ];
+  return `<div class="bottom-nav">
+    ${items.map(([key,icon,label,href])=>`
+      <button class="nav-item ${active===key?'active':''}" onclick="navigate('${href}')">
+        <span class="ni">${icon}</span>${label}
+      </button>`).join('')}
+  </div>`;
+}
+function bindNav(){ /* nav uses inline onclick; nothing extra to bind */ }
+
+/* ---- Dashboard ---- */
+async function ViewDashboard(){
+  const trips = await getAllTrips();
+  if(!trips.length){
+    return `<div class="screen">
+      <div class="topbar"><div class="tb-left"><h2>Dashboard</h2></div></div>
+      <div class="empty-state">
+        <div class="es-icon">🏔️</div>
+        <h4>Belum ada pendakian</h4>
+        <p>Buat pendakian pertamamu untuk mulai menyiapkan checklist, tim, dan logistik.</p>
+        <button class="btn btn-primary" onclick="navigate('#/trip-form')">+ Buat Pendakian</button>
+      </div>
+      ${bottomNavHtml('dashboard')}
+    </div>`;
+  }
+  const trip = await ensureCurrentTrip();
+  const dur = getDuration(trip);
+  const {pct,done,total} = await checklistProgress(trip.id);
+  const weight = await totalWeight(trip.id);
+  const carriers = await idbGetAllByTrip('carriers', trip.id);
+  const du = daysUntil(trip.startDate);
+  const status = statusFromProgress(pct);
+
+  return `<div class="screen">
+    <div class="topbar">
+      <div class="tb-left"><h2>Dashboard</h2></div>
+      <button class="icon-btn" onclick="navigate('#/settings')">⚙️</button>
+    </div>
+    <div class="section" style="padding-top:10px;">
+      <div class="section-title"><h3>Pendakian Berikutnya</h3><a class="link-sm" href="#/riwayat">Lihat Semua ›</a></div>
+      <div class="card" style="cursor:pointer;" onclick="navigate('#/trip-form?edit=${trip.id}')">
+        <div class="flex items-center gap-12">
+          <div class="tm-icon" style="width:48px;height:48px;border-radius:14px;background:var(--forest-800);color:#fff;display:flex;align-items:center;justify-content:center;font-size:21px;">🏔️</div>
+          <div style="flex:1;min-width:0;">
+            <h3 style="font-size:16px;">${escapeHtml(trip.mountain||'Tanpa nama')}</h3>
+            <p class="small muted">${escapeHtml(trip.routeUp||'Jalur belum diisi')}</p>
+          </div>
+        </div>
+        <div class="flex items-center justify-between mt-12">
+          <span class="badge badge-muted">📅 ${fmtDate(trip.startDate)}${trip.endDate?(' - '+fmtDate(trip.endDate)):''}</span>
+          <span class="badge badge-muted">${dur.label}</span>
+        </div>
+        ${du!==null && du>=0 ? `<div class="mt-8"><span class="badge badge-success">${du===0?'Hari ini!':du+' hari lagi'}</span></div>` : ''}
+      </div>
+
+      <div class="grid-3 mt-12">
+        <div class="stat-box"><div class="num">${trip.pendakiCount||0}</div><div class="lbl">Pendaki</div></div>
+        <div class="stat-box"><div class="num">${carriers.length||trip.carrierCount||0}</div><div class="lbl">Carrier</div></div>
+        <div class="stat-box"><div class="num" style="font-size:13px;">${escapeHtml(trip.routeUp||'-')}</div><div class="lbl">Jalur Naik</div></div>
+      </div>
+
+      <div class="card mt-12">
+        <div class="section-title" style="margin-bottom:6px;"><h3 style="font-size:14px;">Progress Checklist</h3></div>
+        <div class="flex items-center gap-12">
+          <div class="progress-ring-wrap" style="width:100px;height:100px;">
+            ${ringSvg(pct,100)}
+            <div class="progress-ring-label"><span class="pct" style="font-size:22px;">${pct}%</span><span class="lbl">Siap</span></div>
+          </div>
+          <div style="flex:1;">
+            <div class="flex items-center justify-between small"><span class="muted">🟢 Selesai</span><b>${pct}%</b></div>
+            <div class="flex items-center justify-between small mt-8"><span class="muted">⚪ Belum</span><b>${100-pct}%</b></div>
+            <div class="divider" style="margin:8px 0;"></div>
+            <div class="small muted">${done} / ${total} item</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-3 mt-12">
+        <div class="stat-box"><div class="num">${total}</div><div class="lbl">Total Barang</div></div>
+        <div class="stat-box"><div class="num" style="font-size:16px;">${fmtKg(weight)}</div><div class="lbl">Total Berat</div></div>
+        <div class="stat-box"><div class="num" style="font-size:15px;">${status.dot}</div><div class="lbl">${status.label}</div></div>
+      </div>
+
+      <div class="section-title mt-16"><h3>Menu Cepat</h3></div>
+      <div class="quickmenu">
+        <button class="qm-item" onclick="navigate('#/checklist')"><span class="qi">✅</span>Checklist</button>
+        <button class="qm-item" onclick="navigate('#/logistik')"><span class="qi">🎒</span>Logistik</button>
+        <button class="qm-item" onclick="event.stopPropagation();navigate('#/logistik')"><span class="qi">⚖️</span>Carrier</button>
+        <button class="qm-item" onclick="navigate('#/tim')"><span class="qi">👥</span>Tim</button>
+        <button class="qm-item" onclick="navigate('#/itinerary')"><span class="qi">🕐</span>Itinerary</button>
+      </div>
+
+      <div class="grid-2 mt-16">
+        <button class="btn btn-outline btn-block" onclick="navigate('#/emergency')">🚨 Darurat</button>
+        <button class="btn btn-outline btn-block" onclick="navigate('#/ai-advisor')">✨ AI Advisor</button>
+      </div>
+      <button class="btn btn-primary btn-block mt-12" onclick="navigate('#/trip-form')">+ Buat Pendakian Baru</button>
+    </div>
+    ${bottomNavHtml('dashboard')}
+  </div>`;
+}
+function ringSvg(pct, size=132){
+  const r = size/2 - 10, c = 2*Math.PI*r;
+  const off = c - (pct/100)*c;
+  return `<svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
+    <circle cx="${size/2}" cy="${size/2}" r="${r}" fill="none" stroke="#EAF0EB" stroke-width="10"/>
+    <circle cx="${size/2}" cy="${size/2}" r="${r}" fill="none" stroke="url(#g1)" stroke-width="10" stroke-linecap="round"
+      stroke-dasharray="${c}" stroke-dashoffset="${off}" style="transition:stroke-dashoffset .6s;"/>
+    <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1E5631"/><stop offset="100%" stop-color="#C6F135"/></linearGradient></defs>
+  </svg>`;
+}
+function bindDashboard(){}
+
+/* ---- Trip form (create/edit) ---- */
+async function ViewTripForm(editId){
+  const trip = editId ? await idbGet('trips', editId) : null;
+  const t = trip || {durationType:'3h2m', pendakiCount:4, carrierCount:3, carrierTargetWeight:15};
+  return `<div class="screen no-nav">
+    <div class="topbar">
+      <div class="tb-left"><button class="back-btn" onclick="history.back()">‹</button><h2>${trip?'Edit Pendakian':'Buat Pendakian Baru'}</h2></div>
+    </div>
+    <form id="tripForm" class="section">
+      <div class="card">
+        <div class="field"><label>Nama Gunung / Pendakian *</label><input type="text" name="mountain" required placeholder="cth. Gunung Prau" value="${escapeHtml(t.mountain||'')}"></div>
+        <div class="field"><label>Nama Trip</label><input type="text" name="tripName" placeholder="cth. Trip Akhir Tahun" value="${escapeHtml(t.tripName||'')}"></div>
+        <div class="grid-2">
+          <div class="field"><label>Tanggal Berangkat</label><input type="date" name="startDate" value="${t.startDate||''}"></div>
+          <div class="field"><label>Estimasi Pulang</label><input type="date" name="endDate" value="${t.endDate||''}"></div>
+        </div>
+        <div class="field">
+          <label>Lama Pendakian</label>
+          <div class="chip-select" id="durationChips">
+            ${DURATION_OPTIONS.map(d=>`<button type="button" class="chip ${t.durationType===d.key?'active':''}" data-dur="${d.key}">${d.label}</button>`).join('')}
+          </div>
+        </div>
+        <div class="grid-2" id="customDurWrap" style="display:${t.durationType==='custom'?'grid':'none'};">
+          <div class="field"><label>Jumlah Hari</label><input type="number" min="1" name="customDays" value="${t.customDays||''}"></div>
+          <div class="field"><label>Jumlah Malam</label><input type="number" min="0" name="customNights" value="${t.customNights||''}"></div>
+        </div>
+        <div class="grid-2">
+          <div class="field"><label>Jumlah Pendaki</label><input type="number" min="1" name="pendakiCount" value="${t.pendakiCount||4}"></div>
+          <div class="field"><label>Jumlah Carrier</label><input type="number" min="1" name="carrierCount" value="${t.carrierCount||3}"></div>
+        </div>
+        <div class="field"><label>Target Berat / Carrier (kg)</label><input type="number" step="0.1" min="0" name="carrierTargetWeight" value="${t.carrierTargetWeight||15}"></div>
+        <div class="grid-2">
+          <div class="field"><label>Jalur Naik</label><input type="text" name="routeUp" placeholder="cth. Patak Banteng" value="${escapeHtml(t.routeUp||'')}"></div>
+          <div class="field"><label>Jalur Turun</label><input type="text" name="routeDown" placeholder="cth. Dieng" value="${escapeHtml(t.routeDown||'')}"></div>
+        </div>
+        <div class="field"><label>Basecamp</label><input type="text" name="basecamp" value="${escapeHtml(t.basecamp||'')}"></div>
+        <div class="grid-2">
+          <div class="field"><label>Estimasi Waktu Mulai</label><input type="time" name="startTimeEst" value="${t.startTimeEst||''}"></div>
+          <div class="field"><label>Estimasi Waktu Summit</label><input type="time" name="summitTimeEst" value="${t.summitTimeEst||''}"></div>
+        </div>
+        <div class="field"><label>Catatan Perjalanan</label><textarea name="notes" placeholder="Catatan tambahan...">${escapeHtml(t.notes||'')}</textarea></div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block mt-16">${trip?'Simpan Perubahan':'Buat Pendakian →'}</button>
+    </form>
+  </div>`;
+}
+function bindTripForm(editId){
+  const form = document.getElementById('tripForm');
+  let durationType = form.querySelector('.chip.active')?.dataset.dur || '3h2m';
+  document.getElementById('durationChips').addEventListener('click', (e)=>{
+    const btn = e.target.closest('.chip'); if(!btn) return;
+    form.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+    btn.classList.add('active');
+    durationType = btn.dataset.dur;
+    document.getElementById('customDurWrap').style.display = durationType==='custom'?'grid':'none';
+  });
+  form.addEventListener('submit', async (e)=>{
+    e.preventDefault();
+    const fd = new FormData(form);
+    const mountain = (fd.get('mountain')||'').trim();
+    if(!mountain){ toast('Nama gunung wajib diisi','err'); return; }
+    const data = {
+      id: editId || uid(),
+      mountain, tripName: fd.get('tripName')||'',
+      startDate: fd.get('startDate')||'', endDate: fd.get('endDate')||'',
+      durationType, customDays: Number(fd.get('customDays'))||null, customNights: Number(fd.get('customNights'))||null,
+      pendakiCount: Number(fd.get('pendakiCount'))||1, carrierCount: Number(fd.get('carrierCount'))||1,
+      carrierTargetWeight: Number(fd.get('carrierTargetWeight'))||15,
+      routeUp: fd.get('routeUp')||'', routeDown: fd.get('routeDown')||'', basecamp: fd.get('basecamp')||'',
+      startTimeEst: fd.get('startTimeEst')||'', summitTimeEst: fd.get('summitTimeEst')||'',
+      notes: fd.get('notes')||'',
+      emergency: (editId && (await idbGet('trips', editId))?.emergency) || {},
+      createdAt: editId ? (await idbGet('trips', editId))?.createdAt || new Date().toISOString() : new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    };
+    await idbPut('trips', data);
+    if(!editId){
+      await seedChecklist(data.id);
+      // auto create carriers
+      for(let i=1;i<=data.carrierCount;i++){
+        await idbPut('carriers', {id:uid(), tripId:data.id, label:'Carrier '+i, owner:'', targetWeight:data.carrierTargetWeight});
+      }
+    }
+    state.currentTripId = data.id;
+    await setSetting('lastTripId', data.id);
+    toast(editId? 'Pendakian diperbarui':'Pendakian dibuat!');
+    navigate('#/dashboard');
+  });
+}
+
+/* ---- Checklist (category list) ---- */
+async function ViewChecklist(){
+  const trip = await ensureCurrentTrip();
+  if(!trip) return emptyTripScreen('checklist');
+  const {pct,done,total} = await checklistProgress(trip.id);
+  const allCats = await getCategoriesForTrip(trip.id);
+  const cats = await Promise.all(allCats.map(async c=> ({...c, ...(await categoryProgress(trip.id, c.key))}) ));
+  return `<div class="screen">
+    <div class="topbar">
+      <div class="tb-left"><h2>Checklist</h2></div>
+      <button class="icon-btn" onclick="navigate('#/settings')">🖨️</button>
+    </div>
+    <div class="section" style="padding-top:10px;">
+      <div class="card">
+        <div class="flex items-center justify-between"><h3 style="font-size:14px;">Progress Keseluruhan</h3><span class="small muted">${done} / ${total} item</span></div>
+        <div class="flex items-end gap-8 mt-8" style="align-items:baseline;">
+          <span style="font-size:30px;font-weight:800;color:var(--forest-800);">${pct}%</span>
+        </div>
+        <div class="progress-bar mt-8"><i style="width:${pct}%;"></i></div>
+      </div>
+      <div class="mt-16">
+        ${cats.map(c=>`
+          <div class="card cat-card" style="cursor:pointer;margin-top:10px;" onclick="navigate('#/checklist-cat?cat=${c.key}')">
+            <div class="cat-icon">${c.icon}</div>
+            <div class="cat-body">
+              <div class="cat-top"><span>${escapeHtml(c.label)}${c.custom?' <span class="badge badge-muted" style="font-size:9.5px;padding:2px 6px;">custom</span>':''}</span><span>${c.pct}%</span></div>
+              <div class="cat-sub">${c.done} / ${c.total} item</div>
+              <div class="progress-bar"><i style="width:${c.pct}%;"></i></div>
+            </div>
+            <span class="chev">›</span>
+          </div>`).join('')}
+        <button class="card cat-card" style="cursor:pointer;margin-top:10px;border:1.5px dashed var(--border);background:transparent;box-shadow:none;width:100%;justify-content:center;color:var(--forest-700);font-weight:700;" id="addCatBtn">
+          <span style="font-size:18px;">＋</span> Tambah Kategori
+        </button>
+      </div>
+    </div>
+    <button class="fab" onclick="openAddItemModal('${trip.id}','${allCats[0]?.key||'utama'}')">+</button>
+    ${bottomNavHtml('checklist')}
+  </div>`;
+}
+function bindChecklist(){
+  const tripId = state.currentTripId;
+  const btn = document.getElementById('addCatBtn');
+  if(btn) btn.onclick = ()=> openAddCategoryModal(tripId);
+}
+
+/* ---- Checklist category detail ---- */
+async function ViewChecklistCategory(catKey){
+  const trip = await ensureCurrentTrip();
+  if(!trip) return emptyTripScreen('checklist');
+  const cat = await getCategoryByKey(trip.id, catKey);
+  const {items, pct, done, total} = await categoryProgress(trip.id, cat.key);
+  const filter = state.checklistFilter;
+  const filtered = filter==='all'?items : filter==='done'?items.filter(i=>i.checked) : items.filter(i=>!i.checked);
+  const catWeight = items.reduce((s,i)=>s+(i.qty||0)*(i.unitWeight||0),0);
+  return `<div class="screen">
+    <div class="topbar">
+      <div class="tb-left"><button class="back-btn" onclick="navigate('#/checklist')">‹</button><h2>${escapeHtml(cat.label)}</h2></div>
+      ${cat.custom? `<button class="icon-btn" id="delCatBtn" title="Hapus kategori">🗑️</button>` : `<button class="icon-btn" onclick="event.stopPropagation();" style="visibility:hidden;">⋮</button>`}
+    </div>
+    <div class="section" style="padding-top:6px;">
+      <div class="card">
+        <div class="flex items-center justify-between"><h3 style="font-size:14px;">${escapeHtml(cat.label)}</h3><span class="small muted">${done} / ${total} item selesai</span></div>
+        <div class="progress-bar mt-8"><i style="width:${pct}%;"></i></div>
+        <div class="small muted mt-8">${pct}%</div>
+      </div>
+      <div class="tabs mt-12">
+        <button class="tab-btn ${filter==='all'?'active':''}" data-f="all">Semua</button>
+        <button class="tab-btn ${filter==='pending'?'active':''}" data-f="pending">Belum</button>
+        <button class="tab-btn ${filter==='done'?'active':''}" data-f="done">Selesai</button>
+      </div>
+      <div class="card mt-12" id="itemListCard">
+        ${filtered.length? filtered.map(i=>checkRowHtml(i)).join('') : `<div class="empty-state" style="padding:24px 8px;"><p>Tidak ada item.</p></div>`}
+      </div>
+      <div class="flex items-center justify-between mt-16">
+        <span class="small muted">Total Berat Kategori</span>
+        <b>${fmtKg(catWeight)}</b>
+      </div>
+      <button class="btn btn-primary btn-block mt-12" onclick="navigate('#/logistik')">Atur ke Carrier</button>
+      <button class="btn btn-outline btn-block mt-12" onclick="openAddItemModal('${trip.id}','${cat.key}')">+ Tambah Barang</button>
+    </div>
+  </div>`;
+}
+function checkRowHtml(i){
+  return `<div class="check-row ${i.checked?'done':''}" data-id="${i.id}">
+    <button class="checkbox ${i.checked?'on':''}" data-toggle="${i.id}">${i.checked?'✓':''}</button>
+    <span class="ci-name" data-edit="${i.id}">${escapeHtml(i.name)}</span>
+    <span class="ci-meta">${i.qty} · ${fmtKg((i.qty||0)*(i.unitWeight||0))}</span>
+  </div>`;
+}
+function bindChecklistCategory(catKey){
+  document.querySelectorAll('.tab-btn[data-f]').forEach(b=>{
+    b.onclick = ()=>{ state.checklistFilter = b.dataset.f; navigate('#/checklist-cat?cat='+catKey); };
+  });
+  document.getElementById('itemListCard').addEventListener('click', async (e)=>{
+    const toggleId = e.target.closest('[data-toggle]')?.dataset.toggle;
+    const editId = e.target.closest('[data-edit]')?.dataset.edit;
+    if(toggleId){
+      const item = await idbGet('checklistItems', toggleId);
+      item.checked = !item.checked;
+      await idbPut('checklistItems', item);
+      navigate('#/checklist-cat?cat='+catKey);
+      return;
+    }
+    if(editId){ openEditItemModal(editId, catKey); }
+  });
+  const delBtn = document.getElementById('delCatBtn');
+  if(delBtn) delBtn.onclick = ()=> deleteCategory(state.currentTripId, catKey);
+}
+function openAddCategoryModal(tripId){
+  openModal('Tambah Kategori', `
+    <form id="addCatForm">
+      <div class="field"><label>Nama Kategori</label><input type="text" name="label" required placeholder="cth. Peralatan Foto"></div>
+      <div class="field"><label>Ikon</label>
+        <select name="icon">${CATEGORY_ICON_CHOICES.map(ic=>`<option value="${ic}">${ic}</option>`).join('')}</select>
+      </div>
+      <div class="modal-actions"><button type="submit" class="btn btn-primary btn-block">Simpan</button></div>
+    </form>`);
+  document.getElementById('addCatForm').addEventListener('submit', async (e)=>{
+    e.preventDefault();
+    const fd = new FormData(e.target);
+    const label = (fd.get('label')||'').trim();
+    if(!label){ return; }
+    const newId = uid();
+    await idbPut('categories', {id:newId, tripId, label, icon:fd.get('icon')||'📦', order:Date.now()});
+    closeModal(); toast('Kategori ditambahkan');
+    navigate('#/checklist-cat?cat='+newId);
+  });
+}
+function deleteCategory(tripId, catKey){
+  confirmModal('Hapus kategori ini beserta seluruh barang di dalamnya? Tindakan ini tidak dapat dibatalkan.', async ()=>{
+    const items = await idbGetAllByTrip('checklistItems', tripId);
+    for(const i of items.filter(i=>i.category===catKey)){ await idbDelete('checklistItems', i.id); }
+    await idbDelete('categories', catKey);
+    toast('Kategori dihapus');
+    navigate('#/checklist');
+  });
+}
+async function openAddItemModal(tripId, catKey){
+  const cats = await getCategoriesForTrip(tripId);
+  openModal('Tambah Barang', `
+    <form id="addItemForm">
+      <div class="field"><label>Nama Barang</label><input type="text" name="name" required placeholder="cth. Kacamata hiking"></div>
+      <div class="field"><label>Kategori</label>
+        <select name="category">${cats.map(c=>`<option value="${c.key}" ${c.key===catKey?'selected':''}>${c.icon} ${escapeHtml(c.label)}</option>`).join('')}</select>
+      </div>
+      <div class="grid-2">
+        <div class="field"><label>Jumlah</label><input type="number" name="qty" min="1" value="1"></div>
+        <div class="field"><label>Berat / item (kg)</label><input type="number" step="0.01" min="0" name="unitWeight" value="0.1"></div>
+      </div>
+      <div class="modal-actions"><button type="submit" class="btn btn-primary btn-block">Simpan</button></div>
+    </form>`);
+  document.getElementById('addItemForm').addEventListener('submit', async (e)=>{
+    e.preventDefault();
+    const fd = new FormData(e.target);
+    await idbPut('checklistItems', {
+      id:uid(), tripId, category:fd.get('category'), name:(fd.get('name')||'').trim(),
+      qty:Number(fd.get('qty'))||1, unitWeight:Number(fd.get('unitWeight'))||0, checked:false, carrierId:null, isCustom:true
+    });
+    closeModal(); toast('Barang ditambahkan');
+    render();
+  });
+}
+async function openEditItemModal(itemId, catKey){
+  const item = await idbGet('checklistItems', itemId);
+  openModal('Edit Barang', `
+    <form id="editItemForm">
+      <div class="field"><label>Nama Barang</label><input type="text" name="name" required value="${escapeHtml(item.name)}"></div>
+      <div class="grid-2">
+        <div class="field"><label>Jumlah</label><input type="number" name="qty" min="0" value="${item.qty}"></div>
+        <div class="field"><label>Berat / item (kg)</label><input type="number" step="0.01" min="0" name="unitWeight" value="${item.unitWeight}"></div>
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-danger" id="delItemBtn">Hapus</button>
+        <button type="submit" class="btn btn-primary btn-block">Simpan</button>
+      </div>
+    </form>`);
+  document.getElementById('editItemForm').addEventListener('submit', async (e)=>{
+    e.preventDefault();
+    const fd = new FormData(e.target);
+    item.name = (fd.get('name')||'').trim(); item.qty = Number(fd.get('qty'))||0; item.unitWeight = Number(fd.get('unitWeight'))||0;
+    await idbPut('checklistItems', item);
+    closeModal(); toast('Perubahan disimpan'); render();
+  });
+  document.getElementById('delItemBtn').onclick = ()=>{
+    confirmModal('Hapus barang "'+escapeHtml(item.name)+'" dari checklist?', async ()=>{
+      await idbDelete('checklistItems', itemId); toast('Barang dihapus'); render();
+    });
+  };
+}
+
+/* ---- Logistik hub (Carrier / Smart Logistik+Air / Berat) ---- */
+async function ViewLogistik(){
+  const trip = await ensureCurrentTrip();
+  if(!trip) return emptyTripScreen('logistik');
+  const tab = state.logistikTab;
+  let body = '';
+  if(tab==='carrier') body = await logistikCarrierTab(trip);
+  else if(tab==='smart') body = await logistikSmartTab(trip);
+  else body = await logistikWeightTab(trip);
+
+  return `<div class="screen">
+    <div class="topbar"><div class="tb-left"><h2>Logistik</h2></div></div>
+    <div class="section" style="padding-top:6px;">
+      <div class="tabs">
+        <button class="tab-btn ${tab==='carrier'?'active':''}" data-tab="carrier">⚖️ Pembagian Carrier</button>
+        <button class="tab-btn ${tab==='smart'?'active':''}" data-tab="smart">🥫 Smart Logistik</button>
+        <button class="tab-btn ${tab==='weight'?'active':''}" data-tab="weight">📊 Kalkulator Berat</button>
+      </div>
+      <div class="mt-12" id="logistikBody">${body}</div>
+    </div>
+    ${bottomNavHtml('logistik')}
+  </div>`;
+}
+async function logistikCarrierTab(trip){
+  const {byCarrier, unassigned, unassignedCount} = await weightByCarrier(trip.id);
+  const total = byCarrier.reduce((s,c)=>s+c.weight,0) + unassigned;
+  const colors = ['var(--forest-700)','#E08A3C','#3C7FB1','#8A5CC7','#C24E5A'];
+  return `
+    <div class="card">
+      <div class="flex items-center justify-between"><span class="small muted">Total Berat</span><b style="font-size:18px;">${fmtKg(total)}</b></div>
+      <div class="flex items-center justify-between mt-8"><span class="small muted">Rata-rata / Carrier</span><b>${fmtKg(byCarrier.length? total/byCarrier.length:0)}</b></div>
+    </div>
+    <div class="mt-12">
+      ${byCarrier.map((c,idx)=>{
+        const target = c.carrier.targetWeight || trip.carrierTargetWeight || 1;
+        const ratio = target? Math.round((c.weight/target)*100) : 0;
+        const over = c.weight > target;
+        return `<div class="card carrier-card mt-12" style="cursor:pointer;" onclick="openCarrierAssignModal('${c.carrier.id}')">
+          <div class="carrier-head">
+            <div class="ch-left">
+              <div class="carrier-dot" style="background:${colors[idx%colors.length]};">${idx+1}</div>
+              <div><b style="font-size:14px;">${escapeHtml(c.carrier.label)}</b>${c.carrier.owner?` <span class="small muted">- ${escapeHtml(c.carrier.owner)}</span>`:''}</div>
+            </div>
+            <b>${fmtKg(c.weight)}</b>
+          </div>
+          <div class="small muted">Target ${fmtKg(target)}</div>
+          <div class="progress-bar mt-8"><i style="width:${Math.min(ratio,100)}%;background:${over?'var(--danger)':'linear-gradient(90deg,var(--forest-600),var(--lime))'};"></i></div>
+          <div class="flex justify-between mt-8"><span class="small muted">${c.count} item</span><span class="badge ${over?'badge-danger':'badge-success'}">${ratio}%</span></div>
+        </div>`;
+      }).join('')}
+    </div>
+    <div class="card mt-12">
+      <div class="flex items-center justify-between"><span>Belum Ditugaskan</span><b>${fmtKg(unassigned)}</b></div>
+      <div class="small muted mt-8">${unassignedCount} item ${unassignedCount? '· <button class="link-sm" style="background:none;border:none;padding:0;cursor:pointer;color:var(--forest-700);" onclick="openUnassignedModal()">Kelola →</button>' : ''}</div>
+      ${unassignedCount===0? `<div class="badge badge-success mt-8">✓ Semua barang sudah ditugaskan ke carrier</div>` : ''}
+    </div>
+    <button class="btn btn-primary btn-block mt-12" onclick="openUnassignedModal()">Kelola Pembagian Barang</button>
+    <button class="btn btn-outline btn-block mt-12" onclick="openManageCarriersModal('${trip.id}')">+ Kelola Carrier</button>
+  `;
+}
+async function logistikSmartTab(trip){
+  const {dur, pax, rec} = computeRecommendations(trip);
+  const items = await idbGetAllByTrip('checklistItems', trip.id);
+  const subTab = state.logistikSmartSub || 'makanan';
+  const groups = {
+    makanan: ['Beras / nasi instan','Lauk','Sarapan','Snack','Energy bar','Kantong sampah'],
+    air: null, // handled separately below
+    gas: ['Gas'],
+    pakaian: ['Pakaian ganti','Kaos kaki'],
+    baterai: ['Baterai cadangan','Power bank'],
+  };
+  const wc = trip.waterCalc || {perPerson:3, source:'tidak'};
+  const wr = waterRecommendation(pax, dur.days, wc.perPerson, wc.source);
+
+  const subtabsHtml = `<div class="tabs">
+    ${['makanan','air','gas','pakaian','baterai'].map(k=>`<button class="tab-btn ${subTab===k?'active':''}" data-sub="${k}">${{makanan:'Makanan',air:'💧 Air',gas:'Gas',pakaian:'Pakaian',baterai:'Baterai'}[k]}</button>`).join('')}
+  </div>`;
+
+  let content = '';
+  if(subTab==='air'){
+    content = `
+    <div class="card mt-12">
+      <div class="flex items-center gap-8"><span style="font-size:18px;">💧</span><b>Kalkulator Air</b></div>
+      <div class="field mt-12"><label>Jumlah Pendaki</label>
+        <div class="stepper"><button type="button" data-wstep="-pax">−</button><input type="number" id="wPax" value="${pax}" readonly><button type="button" data-wstep="+pax">+</button></div>
+      </div>
+      <div class="field"><label>Durasi Pendakian</label><input type="text" value="${dur.label}" readonly style="background:#F0F3F0;"></div>
+      <div class="field"><label>Kebutuhan Air / Orang / Hari</label>
+        <select id="wPerPerson">
+          ${[2,2.5,3,3.5,4].map(v=>`<option value="${v}" ${wc.perPerson==v?'selected':''}>${v} Liter</option>`).join('')}
+        </select>
+      </div>
+      <div class="field"><label>Sumber Air Tersedia</label>
+        <select id="wSource">
+          <option value="tidak" ${wc.source==='tidak'?'selected':''}>Tidak ada di jalur</option>
+          <option value="ada" ${wc.source==='ada'?'selected':''}>Ada di jalur (Pos / Camp)</option>
+          <option value="melimpah" ${wc.source==='melimpah'?'selected':''}>Melimpah</option>
+        </select>
+      </div>
+      <div class="card" style="background:var(--success-bg);border:none;">
+        <div class="small" style="color:var(--forest-700);font-weight:700;">Rekomendasi Air Awal</div>
+        <div style="font-size:26px;font-weight:800;color:var(--forest-800);margin-top:4px;">${wr.low} - ${wr.high} Liter</div>
+        <div class="small muted mt-8">Estimasi untuk ${pax} pendaki selama ${dur.label.toLowerCase()}.</div>
+      </div>
+      <div class="flex items-start gap-8 mt-12" style="align-items:flex-start;">
+        <span>ℹ️</span>
+        <span class="small muted">Pastikan membawa cadangan tambahan terutama saat musim kemarau. Angka ini adalah estimasi, bukan jaminan keselamatan — sesuaikan dengan kondisi lapangan.</span>
+      </div>
+      <button class="btn btn-lime btn-block mt-12" id="applyWaterRec">Terapkan ke Checklist (Air awal: ${wr.high} item)</button>
+    </div>`;
+  } else {
+    const names = groups[subTab];
+    content = `<div class="card mt-12">
+      <div class="small muted">Rekomendasi untuk <b>${pax} pendaki × ${dur.label}</b>. Ini estimasi yang dapat kamu ubah — bukan angka keselamatan mutlak.</div>
+      <div class="mt-12">
+        ${names.map(n=>{
+          const item = items.find(i=>i.name===n);
+          const recQty = rec[n] || (item?item.qty:1);
+          const curQty = item? item.qty : 0;
+          return `<div class="flex items-center justify-between mt-12">
+            <div>
+              <div style="font-weight:700;font-size:13.5px;">${escapeHtml(n)}</div>
+              <div class="small muted">Saat ini: ${curQty} · Rekomendasi: ${recQty}</div>
+            </div>
+            ${item? `<button class="btn btn-sm btn-outline" data-apply="${item.id}" data-qty="${recQty}">Terapkan</button>` : `<span class="small muted">-</span>`}
+          </div>`;
+        }).join('')}
+      </div>
+    </div>`;
+  }
+
+  return subtabsHtml + content;
+}
+async function logistikWeightTab(trip){
+  const items = await idbGetAllByTrip('checklistItems', trip.id);
+  const {byCarrier} = await weightByCarrier(trip.id);
+  const total = items.reduce((s,i)=>s+(i.qty||0)*(i.unitWeight||0),0);
+  const allCats = await getCategoriesForTrip(trip.id);
+  const byCat = allCats.map(c=>{
+    const w = items.filter(i=>i.category===c.key).reduce((s,i)=>s+(i.qty||0)*(i.unitWeight||0),0);
+    return {...c, weight:w};
+  }).filter(c=>c.weight>0 || !c.custom);
+  const maxCat = Math.max(1,...byCat.map(c=>c.weight));
+  const maxCarrier = Math.max(1,...byCarrier.map(c=>c.weight));
+  return `
+    <div class="card">
+      <div class="small muted">Total Berat Seluruh Tim</div>
+      <div style="font-size:26px;font-weight:800;color:var(--forest-800);">${fmtKg(total)}</div>
+      <div class="small muted mt-8">${items.length} item terdaftar</div>
+    </div>
+    <div class="card mt-12">
+      <h4 class="mt-8" style="font-size:14px;margin-bottom:10px;">Berat per Kategori</h4>
+      ${byCat.map(c=>`
+        <div class="wbar-row">
+          <div class="wb-top"><span>${c.icon} ${c.label}</span><span>${fmtKg(c.weight)}</span></div>
+          <div class="wbar-track"><div class="wbar-fill" style="width:${(c.weight/maxCat*100)||0}%;background:var(--forest-600);"></div></div>
+        </div>`).join('')}
+    </div>
+    <div class="card mt-12">
+      <h4 class="mt-8" style="font-size:14px;margin-bottom:10px;">Berat per Carrier</h4>
+      ${byCarrier.length? byCarrier.map(c=>`
+        <div class="wbar-row">
+          <div class="wb-top"><span>${escapeHtml(c.carrier.label)}</span><span>${fmtKg(c.weight)}</span></div>
+          <div class="wbar-track"><div class="wbar-fill" style="width:${(c.weight/maxCarrier*100)||0}%;background:${c.weight>(c.carrier.targetWeight||99999)?'var(--danger)':'var(--lime-dark)'};"></div></div>
+        </div>`).join('') : `<p class="small muted">Belum ada carrier.</p>`}
+    </div>
+  `;
+}
+function bindLogistik(){
+  document.querySelectorAll('.tab-btn[data-tab]').forEach(b=>{
+    b.onclick = ()=>{ state.logistikTab = b.dataset.tab; render(); };
+  });
+  bindLogistikBody();
+}
+function bindLogistikBody(){
+  const body = document.getElementById('logistikBody');
+  if(!body) return;
+  body.querySelectorAll('[data-sub]').forEach(b=>{
+    b.onclick = ()=>{ state.logistikSmartSub = b.dataset.sub; render(); };
+  });
+  body.querySelectorAll('[data-apply]').forEach(b=>{
+    b.onclick = async ()=>{
+      const item = await idbGet('checklistItems', b.dataset.apply);
+      item.qty = Number(b.dataset.qty);
+      await idbPut('checklistItems', item);
+      toast('Rekomendasi diterapkan'); render();
+    };
+  });
+  const applyWater = document.getElementById('applyWaterRec');
+  if(applyWater){
+    const perP = document.getElementById('wPerPerson'), src = document.getElementById('wSource');
+    [perP, src].forEach(el=> el && el.addEventListener('change', saveWaterCalc));
+    applyWater.onclick = async ()=>{
+      const trip = await ensureCurrentTrip();
+      const pax = trip.pendakiCount, dur = getDuration(trip);
+      const wc = trip.waterCalc||{perPerson:3, source:'tidak'};
+      const wr = waterRecommendation(pax, dur.days, wc.perPerson, wc.source);
+      const items = await idbGetAllByTrip('checklistItems', trip.id);
+      const item = items.find(i=>i.name==='Air awal');
+      if(item){ item.qty = wr.high; await idbPut('checklistItems', item); toast('Air awal diperbarui: '+wr.high+' liter'); render(); }
+    };
+  }
+}
+async function saveWaterCalc(){
+  const trip = await ensureCurrentTrip();
+  trip.waterCalc = { perPerson: Number(document.getElementById('wPerPerson').value), source: document.getElementById('wSource').value };
+  await idbPut('trips', trip);
+  render();
+}
+async function openUnassignedModal(){
+  const trip = await ensureCurrentTrip();
+  const items = await idbGetAllByTrip('checklistItems', trip.id);
+  const carriers = await idbGetAllByTrip('carriers', trip.id);
+  openModal('Kelola Pembagian Barang', `
+    <div class="small muted mt-8">Pilih carrier untuk tiap barang.</div>
+    <div style="max-height:55vh;overflow-y:auto;margin-top:10px;">
+      ${items.map(i=>`
+        <div class="flex items-center justify-between" style="padding:8px 0;border-bottom:1px solid var(--border);">
+          <div style="flex:1;min-width:0;"><div style="font-size:13px;font-weight:600;">${escapeHtml(i.name)}</div><div class="small muted">${fmtKg((i.qty||0)*(i.unitWeight||0))}</div></div>
+          <select data-assign="${i.id}" style="width:130px;padding:8px;border-radius:8px;border:1px solid var(--border);">
+            <option value="">Belum ditugaskan</option>
+            ${carriers.map(c=>`<option value="${c.id}" ${i.carrierId===c.id?'selected':''}>${escapeHtml(c.label)}</option>`).join('')}
+          </select>
+        </div>`).join('')}
+    </div>
+    <div class="modal-actions"><button class="btn btn-primary btn-block" onclick="closeModal();render();">Selesai</button></div>
+  `);
+  document.querySelectorAll('[data-assign]').forEach(sel=>{
+    sel.addEventListener('change', async ()=>{
+      const item = await idbGet('checklistItems', sel.dataset.assign);
+      item.carrierId = sel.value || null;
+      await idbPut('checklistItems', item);
+    });
+  });
+}
+function openCarrierAssignModal(carrierId){ openUnassignedModal(); }
+async function openManageCarriersModal(tripId){
+  const carriers = await idbGetAllByTrip('carriers', tripId);
+  openModal('Kelola Carrier', `
+    <div id="carrierListModal">
+      ${carriers.map(c=>`
+        <div class="flex items-center gap-8 mt-8">
+          <input type="text" data-cid="${c.id}" data-f="label" value="${escapeHtml(c.label)}" style="flex:1;padding:9px;border-radius:8px;border:1px solid var(--border);">
+          <input type="text" data-cid="${c.id}" data-f="owner" value="${escapeHtml(c.owner||'')}" placeholder="Pemilik" style="flex:1;padding:9px;border-radius:8px;border:1px solid var(--border);">
+          <input type="number" data-cid="${c.id}" data-f="targetWeight" value="${c.targetWeight||0}" style="width:60px;padding:9px;border-radius:8px;border:1px solid var(--border);">
+          <button data-del="${c.id}" style="background:none;border:none;color:var(--danger);font-size:16px;">🗑️</button>
+        </div>`).join('')}
+    </div>
+    <button class="btn btn-outline btn-block mt-12" id="addCarrierBtn">+ Tambah Carrier</button>
+    <div class="modal-actions"><button class="btn btn-primary btn-block" id="saveCarriersBtn">Simpan</button></div>
+  `);
+  document.getElementById('addCarrierBtn').onclick = async ()=>{
+    await idbPut('carriers', {id:uid(), tripId, label:'Carrier '+(carriers.length+1), owner:'', targetWeight:15});
+    closeModal(); openManageCarriersModal(tripId);
+  };
+  document.getElementById('carrierListModal').addEventListener('click', async (e)=>{
+    const delId = e.target.closest('[data-del]')?.dataset.del;
+    if(delId){
+      confirmModal('Hapus carrier ini? Barang yang ditugaskan akan menjadi belum ditugaskan.', async ()=>{
+        const items = await idbGetAllByTrip('checklistItems', tripId);
+        for(const it of items){ if(it.carrierId===delId){ it.carrierId=null; await idbPut('checklistItems', it); } }
+        await idbDelete('carriers', delId);
+        closeModal(); openManageCarriersModal(tripId);
+      });
+    }
+  });
+  document.getElementById('saveCarriersBtn').onclick = async ()=>{
+    const inputs = document.querySelectorAll('[data-cid]');
+    const byC = {};
+    inputs.forEach(inp=>{ byC[inp.dataset.cid] = byC[inp.dataset.cid]||{}; byC[inp.dataset.cid][inp.dataset.f] = inp.value; });
+    for(const cid in byC){
+      const c = await idbGet('carriers', cid);
+      c.label = byC[cid].label || c.label; c.owner = byC[cid].owner||''; c.targetWeight = Number(byC[cid].targetWeight)||0;
+      await idbPut('carriers', c);
+    }
+    closeModal(); toast('Carrier diperbarui'); render();
+  };
+}
+
+/* ---- Tim ---- */
+async function ViewTim(){
+  const trip = await ensureCurrentTrip();
+  if(!trip) return emptyTripScreen('tim');
+  const members = await idbGetAllByTrip('members', trip.id);
+  return `<div class="screen">
+    <div class="topbar">
+      <div class="tb-left"><h2>Tim Pendakian</h2></div>
+      <button class="link-sm" style="background:none;border:none;padding:6px 4px;" onclick="openMemberModal('${trip.id}')">Tambah</button>
+    </div>
+    <div class="section" style="padding-top:6px;">
+      ${members.length? `<div class="grid-2">${members.map(m=>`
+        <div class="card" style="cursor:pointer;padding:14px;" onclick="openMemberModal('${trip.id}','${m.id}')">
+          <div class="avatar" style="margin-bottom:8px;">${initials(m.name)}</div>
+          <div class="m-name">${escapeHtml(m.name)}</div>
+          <div class="m-role">${escapeHtml(m.role||'Member')}</div>
+          <div class="m-phone">${escapeHtml(m.phone||'')}</div>
+        </div>`).join('')}</div>` :
+        `<div class="empty-state"><div class="es-icon">👥</div><h4>Belum ada anggota</h4><p>Tambahkan anggota tim untuk mengatur peran dan tanggung jawab.</p><button class="btn btn-primary" onclick="openMemberModal('${trip.id}')">+ Tambah Anggota</button></div>`}
+    </div>
+    <button class="fab" onclick="openMemberModal('${trip.id}')">+</button>
+    ${bottomNavHtml('tim')}
+  </div>`;
+}
+function bindTim(){}
+async function openMemberModal(tripId, memberId){
+  const m = memberId ? await idbGet('members', memberId) : {role:'Member'};
+  openModal(memberId?'Edit Anggota':'Tambah Anggota', `
+    <form id="memberForm">
+      <div class="field"><label>Nama</label><input type="text" name="name" required value="${escapeHtml(m.name||'')}"></div>
+      <div class="field"><label>Nomor Telepon</label><input type="tel" name="phone" value="${escapeHtml(m.phone||'')}" placeholder="08xx-xxxx-xxxx"></div>
+      <div class="field"><label>Role</label>
+        <div class="chip-select" id="roleChips">
+          ${ROLE_OPTIONS.map(r=>`<button type="button" class="chip role-chip ${m.role===r?'active':''}" data-role="${r}">${r}</button>`).join('')}
+        </div>
+      </div>
+      <div class="field"><label>Barang Tanggung Jawab</label><input type="text" name="items" value="${escapeHtml(m.items||'')}" placeholder="cth. Tenda, P3K"></div>
+      <div class="field"><label>Catatan</label><textarea name="notes">${escapeHtml(m.notes||'')}</textarea></div>
+      <div class="modal-actions">
+        ${memberId?`<button type="button" class="btn btn-danger" id="delMemberBtn">Hapus</button>`:''}
+        <button type="submit" class="btn btn-primary btn-block">Simpan</button>
+      </div>
+    </form>`);
+  let role = m.role||'Member';
+  document.getElementById('roleChips').addEventListener('click',(e)=>{
+    const btn = e.target.closest('.chip'); if(!btn) return;
+    document.querySelectorAll('#roleChips .chip').forEach(c=>c.classList.remove('active'));
+    btn.classList.add('active'); role = btn.dataset.role;
+  });
+  document.getElementById('memberForm').addEventListener('submit', async (e)=>{
+    e.preventDefault();
+    const fd = new FormData(e.target);
+    const data = {id: memberId||uid(), tripId, name:(fd.get('name')||'').trim(), phone:fd.get('phone')||'', role, items:fd.get('items')||'', notes:fd.get('notes')||''};
+    if(!data.name){ toast('Nama wajib diisi','err'); return; }
+    await idbPut('members', data);
+    closeModal(); toast('Anggota disimpan'); render();
+  });
+  if(memberId){
+    document.getElementById('delMemberBtn').onclick = ()=>{
+      confirmModal('Hapus anggota "'+escapeHtml(m.name)+'"?', async ()=>{
+        await idbDelete('members', memberId); closeModal(); toast('Anggota dihapus'); render();
+      });
+    };
+  }
+}
+
+/* ---- Itinerary + Jalur ---- */
+async function ViewItinerary(){
+  const trip = await ensureCurrentTrip();
+  if(!trip) return emptyTripScreen('itinerary');
+  const tab = state.itineraryTab;
+  let body;
+  if(tab==='itinerary') body = await itineraryTabHtml(trip);
+  else body = await routeTabHtml(trip, tab);
+  return `<div class="screen">
+    <div class="topbar"><div class="tb-left"><button class="back-btn" onclick="navigate('#/dashboard')">‹</button><h2>Rencana Perjalanan</h2></div></div>
+    <div class="section" style="padding-top:6px;">
+      <div class="tabs">
+        <button class="tab-btn ${tab==='itinerary'?'active':''}" data-itab="itinerary">Itinerary</button>
+        <button class="tab-btn ${tab==='naik'?'active':''}" data-itab="naik">Jalur Naik</button>
+        <button class="tab-btn ${tab==='turun'?'active':''}" data-itab="turun">Jalur Turun</button>
+      </div>
+      <div class="mt-12" id="itinBody">${body}</div>
+    </div>
+    <button class="fab" onclick="${tab==='itinerary'?`openItineraryItemModal('${trip.id}')`:`openRoutePointModal('${trip.id}','${tab}')`}">+</button>
+  </div>`;
+}
+async function itineraryTabHtml(trip){
+  const rows = (await idbGetAllByTrip('itinerary', trip.id)).sort((a,b)=> (a.time||'').localeCompare(b.time||''));
+  if(!rows.length) return `<div class="empty-state"><div class="es-icon">🕐</div><h4>Belum ada itinerary</h4><p>Tambahkan jadwal kegiatan pendakianmu.</p></div>`;
+  return `<div class="card"><div class="timeline">
+    ${rows.map(r=>`
+      <div class="tl-item" data-id="${r.id}" style="cursor:pointer;" onclick="openItineraryItemModal('${trip.id}','${r.id}')">
+        <span class="tl-dot"></span>
+        <div class="tl-time">${r.time||'--:--'}</div>
+        <div class="tl-title">${escapeHtml(r.activity)}</div>
+        ${r.day?`<div class="tl-meta">Hari ${r.day}</div>`:''}
+      </div>`).join('')}
+  </div></div>`;
+}
+async function routeTabHtml(trip, dir){
+  const points = (await idbGetAllByTrip('routePoints', trip.id)).filter(p=>p.direction===dir).sort((a,b)=>(a.order||0)-(b.order||0));
+  const label = dir==='naik'? (trip.routeUp||'Jalur Naik') : (trip.routeDown||'Jalur Turun');
+  if(!points.length) return `<div class="empty-state"><div class="es-icon">🗺️</div><h4>Belum ada titik jalur</h4><p>Tambahkan titik-titik penting pada jalur ${dir}.</p></div>`;
+  const difficultyBadge = {mudah:'badge-success',sedang:'badge-warning',sulit:'badge-danger'};
+  return `<div class="card"><div class="small muted" style="margin-bottom:10px;">${escapeHtml(label)}</div><div class="timeline">
+    ${points.map((p,idx)=>`
+      <div class="tl-item" style="cursor:pointer;" onclick="openRoutePointModal('${trip.id}','${dir}','${p.id}')">
+        <span class="tl-dot"></span>
+        <div class="flex items-center gap-8"><div class="tl-title" style="margin-top:0;">${idx+1}. ${escapeHtml(p.name)}</div>${p.difficulty?`<span class="badge ${difficultyBadge[p.difficulty]||'badge-muted'}">${p.difficulty}</span>`:''}</div>
+        <div class="tl-meta">${p.time?('⏱️ '+p.time+' · '):''}${p.waterSource?('💧 '+escapeHtml(p.waterSource)):'Tanpa sumber air'}</div>
+        ${p.notes?`<div class="tl-meta">${escapeHtml(p.notes)}</div>`:''}
+      </div>`).join('')}
+  </div></div>`;
+}
+function bindItinerary(){
+  document.querySelectorAll('[data-itab]').forEach(b=>{
+    b.onclick = ()=>{ state.itineraryTab = b.dataset.itab; render(); };
+  });
+}
+async function openItineraryItemModal(tripId, id){
+  const r = id? await idbGet('itinerary', id) : {};
+  openModal(id?'Edit Itinerary':'Tambah Itinerary', `
+    <form id="itinForm">
+      <div class="grid-2">
+        <div class="field"><label>Waktu</label><input type="time" name="time" value="${r.time||''}"></div>
+        <div class="field"><label>Hari ke-</label><input type="number" min="1" name="day" value="${r.day||1}"></div>
+      </div>
+      <div class="field"><label>Kegiatan</label><input type="text" name="activity" required value="${escapeHtml(r.activity||'')}" placeholder="cth. Summit attack"></div>
+      <div class="modal-actions">
+        ${id?`<button type="button" class="btn btn-danger" id="delItinBtn">Hapus</button>`:''}
+        <button type="submit" class="btn btn-primary btn-block">Simpan</button>
+      </div>
+    </form>`);
+  document.getElementById('itinForm').addEventListener('submit', async (e)=>{
+    e.preventDefault(); const fd = new FormData(e.target);
+    await idbPut('itinerary', {id:id||uid(), tripId, time:fd.get('time')||'', day:Number(fd.get('day'))||1, activity:(fd.get('activity')||'').trim()});
+    closeModal(); toast('Itinerary disimpan'); render();
+  });
+  if(id) document.getElementById('delItinBtn').onclick = ()=> confirmModal('Hapus item itinerary ini?', async ()=>{ await idbDelete('itinerary', id); closeModal(); toast('Dihapus'); render(); });
+}
+async function openRoutePointModal(tripId, dir, id){
+  const p = id? await idbGet('routePoints', id) : {};
+  const existing = (await idbGetAllByTrip('routePoints', tripId)).filter(x=>x.direction===dir);
+  openModal(id?'Edit Titik Jalur':'Tambah Titik Jalur', `
+    <form id="routeForm">
+      <div class="field"><label>Nama Titik</label><input type="text" name="name" required value="${escapeHtml(p.name||'')}" placeholder="cth. Pos 2"></div>
+      <div class="grid-2">
+        <div class="field"><label>Estimasi Waktu</label><input type="text" name="time" value="${escapeHtml(p.time||'')}" placeholder="cth. 09:00 / 1 jam"></div>
+        <div class="field"><label>Tingkat Kesulitan</label>
+          <select name="difficulty"><option value="">-</option><option value="mudah" ${p.difficulty==='mudah'?'selected':''}>Mudah</option><option value="sedang" ${p.difficulty==='sedang'?'selected':''}>Sedang</option><option value="sulit" ${p.difficulty==='sulit'?'selected':''}>Sulit</option></select>
+        </div>
+      </div>
+      <div class="field"><label>Sumber Air</label><input type="text" name="waterSource" value="${escapeHtml(p.waterSource||'')}" placeholder="cth. Ada, mata air"></div>
+      <div class="field"><label>Catatan</label><textarea name="notes">${escapeHtml(p.notes||'')}</textarea></div>
+      <div class="modal-actions">
+        ${id?`<button type="button" class="btn btn-danger" id="delRouteBtn">Hapus</button>`:''}
+        <button type="submit" class="btn btn-primary btn-block">Simpan</button>
+      </div>
+    </form>`);
+  document.getElementById('routeForm').addEventListener('submit', async (e)=>{
+    e.preventDefault(); const fd = new FormData(e.target);
+    await idbPut('routePoints', {
+      id:id||uid(), tripId, direction:dir, order: id? p.order : existing.length,
+      name:(fd.get('name')||'').trim(), time:fd.get('time')||'', difficulty:fd.get('difficulty')||'',
+      waterSource:fd.get('waterSource')||'', notes:fd.get('notes')||''
+    });
+    closeModal(); toast('Titik jalur disimpan'); render();
+  });
+  if(id) document.getElementById('delRouteBtn').onclick = ()=> confirmModal('Hapus titik jalur ini?', async ()=>{ await idbDelete('routePoints', id); closeModal(); toast('Dihapus'); render(); });
+}
+
+/* ---- Emergency ---- */
+async function ViewEmergency(){
+  const trip = await ensureCurrentTrip();
+  if(!trip) return emptyTripScreen('emergency');
+  const em = trip.emergency || {};
+  return `<div class="screen">
+    <div class="topbar"><div class="tb-left"><button class="back-btn" onclick="navigate('#/dashboard')">‹</button><h2>Informasi Darurat</h2></div>
+      <button class="icon-btn" onclick="openEmergencyEditModal('${trip.id}')">✏️</button>
+    </div>
+    <div class="section" style="padding-top:6px;">
+      <div class="card" style="background:var(--danger-bg);border:none;">
+        <div class="flex items-center gap-8"><span style="font-size:18px;">🚨</span><b style="color:var(--danger);">Akses cepat saat darurat</b></div>
+      </div>
+      ${emRow('Ketua Perjalanan', em.leader)}
+      ${emRow('Kontak Ketua', em.leaderContact, true)}
+      ${emRow('Kontak Darurat', em.emergencyContact, true)}
+      ${emRow('Basecamp', em.basecamp)}
+      ${emRow('Rumah Sakit Terdekat', em.hospital)}
+      ${emRow('Kontak Rumah Sakit', em.hospitalContact, true)}
+      ${emRow('Kontak Kendaraan', em.vehicleContact, true)}
+      ${em.notes? `<div class="card mt-12"><div class="small muted">Catatan Penting</div><p class="mt-8" style="font-size:14px;">${escapeHtml(em.notes)}</p></div>`:''}
+    </div>
+  </div>`;
+}
+function emRow(label, value, isPhone){
+  if(!value) return '';
+  return `<div class="card mt-12">
+    <div class="flex items-center justify-between">
+      <div><div class="small muted">${label}</div><div style="font-weight:700;font-size:15px;margin-top:2px;">${escapeHtml(value)}</div></div>
+      ${isPhone? `<a href="tel:${escapeHtml(value)}" class="btn btn-icon btn-lime" style="font-size:18px;">📞</a>`:''}
+    </div>
+  </div>`;
+}
+function bindEmergency(){}
+async function openEmergencyEditModal(tripId){
+  const trip = await idbGet('trips', tripId);
+  const em = trip.emergency||{};
+  openModal('Edit Informasi Darurat', `
+    <form id="emForm">
+      <div class="field"><label>Ketua Perjalanan</label><input type="text" name="leader" value="${escapeHtml(em.leader||'')}"></div>
+      <div class="field"><label>Kontak Ketua</label><input type="tel" name="leaderContact" value="${escapeHtml(em.leaderContact||'')}"></div>
+      <div class="field"><label>Kontak Darurat</label><input type="tel" name="emergencyContact" value="${escapeHtml(em.emergencyContact||'')}"></div>
+      <div class="field"><label>Basecamp</label><input type="text" name="basecamp" value="${escapeHtml(em.basecamp||'')}"></div>
+      <div class="field"><label>Rumah Sakit Terdekat</label><input type="text" name="hospital" value="${escapeHtml(em.hospital||'')}"></div>
+      <div class="field"><label>Kontak Rumah Sakit</label><input type="tel" name="hospitalContact" value="${escapeHtml(em.hospitalContact||'')}"></div>
+      <div class="field"><label>Kontak Kendaraan</label><input type="tel" name="vehicleContact" value="${escapeHtml(em.vehicleContact||'')}"></div>
+      <div class="field"><label>Catatan Penting</label><textarea name="notes">${escapeHtml(em.notes||'')}</textarea></div>
+      <div class="modal-actions"><button type="submit" class="btn btn-primary btn-block">Simpan</button></div>
+    </form>`);
+  document.getElementById('emForm').addEventListener('submit', async (e)=>{
+    e.preventDefault(); const fd = new FormData(e.target);
+    trip.emergency = Object.fromEntries(fd.entries());
+    await idbPut('trips', trip);
+    closeModal(); toast('Info darurat disimpan'); render();
+  });
+}
+
+/* ---- AI Gear Advisor (rule-based, API-ready structure) ---- */
+async function ViewAI(){
+  const trip = await ensureCurrentTrip();
+  return `<div class="screen">
+    <div class="topbar"><div class="tb-left"><button class="back-btn" onclick="navigate('#/dashboard')">‹</button><h2>✨ AI Gear Advisor</h2></div></div>
+    <div class="section" style="padding-top:6px;">
+      <div class="card">
+        <p class="small muted">Ceritakan rencana pendakianmu, dan dapatkan rekomendasi perlengkapan, logistik, air, pakaian, dan safety.</p>
+        <div class="field mt-12"><textarea id="aiInput" rows="3" placeholder='cth. "4 orang, 3 hari 2 malam, pendakian Gunung X, musim hujan."'>${trip? (trip.pendakiCount+' orang, '+getDuration(trip).label.toLowerCase()+', pendakian '+(trip.mountain||'Gunung')+'.') : ''}</textarea></div>
+        <button class="btn btn-primary btn-block" id="aiSubmit">Dapatkan Rekomendasi</button>
+        <div class="small muted mt-8" style="text-align:center;">Rekomendasi otomatis berbasis aturan (siap diintegrasikan dengan API AI). Bukan jaminan keselamatan.</div>
+      </div>
+      <div id="aiResult" class="mt-12"></div>
+    </div>
+  </div>`;
+}
+function bindAI(){
+  document.getElementById('aiSubmit').onclick = async ()=>{
+    const input = document.getElementById('aiInput').value;
+    const result = document.getElementById('aiResult');
+    result.innerHTML = `<div class="loading-wrap"><div class="spinner"></div><span>Menganalisis kebutuhanmu...</span></div>`;
+    const rec = await getAIRecommendation(input); // rule-based now; swap with real API later
+    result.innerHTML = `
+      <div class="card">
+        <div class="flex items-center gap-8"><span>✨</span><b>Rekomendasi</b></div>
+        ${rec.sections.map(s=>`
+          <div class="mt-12">
+            <div style="font-weight:700;font-size:13.5px;">${s.icon} ${s.title}</div>
+            <ul style="margin:6px 0 0;padding-left:18px;font-size:13px;color:var(--text);line-height:1.7;">
+              ${s.items.map(i=>`<li>${escapeHtml(i)}</li>`).join('')}
+            </ul>
+          </div>`).join('')}
+        <div class="divider"></div>
+        <p class="small muted">Rekomendasi ini adalah estimasi umum, bukan jaminan keselamatan. Selalu sesuaikan dengan kondisi cuaca dan jalur terkini.</p>
+      </div>`;
+  };
+}
+async function getAIRecommendation(inputText){
+  // Parses simple cues from free text and reuses the rule-based engine.
+  // TODO: replace this function body with a real API call to an AI provider when available,
+  // keeping the same return shape: {sections:[{icon,title,items:[]}]}.
+  const paxMatch = inputText.match(/(\d+)\s*(orang|pendaki)/i);
+  const dayMatch = inputText.match(/(\d+)\s*hari/i);
+  const rain = /hujan/i.test(inputText);
+  const pax = paxMatch? Number(paxMatch[1]) : 4;
+  const days = dayMatch? Number(dayMatch[1]) : 3;
+  const wr = waterRecommendation(pax, days, 3, 'tidak');
+  return {
+    sections:[
+      {icon:'🎒', title:'Perlengkapan Utama', items:['Carrier sesuai durasi ('+days+' hari)','Rain cover carrier'+(rain?' (wajib, musim hujan)':''),'Headlamp + baterai cadangan cukup untuk '+days+' malam']},
+      {icon:'🥫', title:'Logistik', items:['Makanan utama untuk ~'+(pax*days)+' porsi','Snack '+(pax*days*2)+' pcs','Gas kompor '+Math.max(1,Math.ceil((pax*days)/8))+' tabung']},
+      {icon:'💧', title:'Air', items:['Bawa sekitar '+wr.low+'-'+wr.high+' liter air awal untuk '+pax+' pendaki']},
+      {icon:'🧥', title:'Pakaian', items:[rain? 'Rain jacket & rain cover wajib (musim hujan)':'Jaket tebal untuk suhu dingin di camp','Baju ganti kering minimal 1 set', 'Kaos kaki cadangan']},
+      {icon:'⛺', title:'Perlengkapan Camp', items:['Tenda tahan angin & flysheet','Sleeping bag sesuai suhu terendah']},
+      {icon:'🩹', title:'Safety Equipment', items:['P3K lengkap + obat pribadi','Emergency blanket dan peluit', rain? 'Dry bag ekstra untuk melindungi elektronik':'Sunscreen & pelindung UV']},
+    ]
+  };
+}
+
+/* ---- Riwayat ---- */
+async function ViewRiwayat(){
+  const trips = await getAllTrips();
+  const cards = await Promise.all(trips.map(async t=>{
+    const {pct} = await checklistProgress(t.id);
+    const weight = await totalWeight(t.id);
+    const dur = getDuration(t);
+    return {t, pct, weight, dur};
+  }));
+  return `<div class="screen">
+    <div class="topbar"><div class="tb-left"><h2>Riwayat Pendakian</h2></div></div>
+    <div class="section" style="padding-top:6px;">
+      ${cards.length? cards.map(c=>`
+        <div class="card mt-12">
+          <div class="flex items-center gap-12" style="cursor:pointer;" onclick="selectTrip('${c.t.id}')">
+            <div class="tm-icon" style="width:44px;height:44px;border-radius:12px;background:var(--forest-800);color:#fff;display:flex;align-items:center;justify-content:center;font-size:19px;">🏔️</div>
+            <div style="flex:1;min-width:0;">
+              <div class="flex items-center justify-between"><b style="font-size:14.5px;">${escapeHtml(c.t.mountain||'Tanpa nama')}</b><b>${c.pct}%</b></div>
+              <div class="small muted">${escapeHtml(c.t.routeUp||'-')}</div>
+            </div>
+          </div>
+          <div class="flex items-center justify-between mt-8 small muted">
+            <span>📅 ${fmtDate(c.t.startDate)}</span><span>${c.dur.label}</span>
+          </div>
+          <div class="flex items-center gap-8 mt-8">
+            <span class="badge badge-muted">👥 ${c.t.pendakiCount||0} Pendaki</span>
+            <span class="badge badge-muted">🎒 ${c.t.carrierCount||0} Carrier</span>
+            <span class="badge badge-muted">${fmtKg(c.weight)}</span>
+          </div>
+          <div class="grid-4 mt-12">
+            <button class="btn btn-sm btn-outline" onclick="selectTrip('${c.t.id}')">Buka</button>
+            <button class="btn btn-sm btn-outline" onclick="navigate('#/trip-form?edit=${c.t.id}')">Edit</button>
+            <button class="btn btn-sm btn-outline" onclick="duplicateTrip('${c.t.id}')">Duplikat</button>
+            <button class="btn btn-sm btn-danger" onclick="deleteTrip('${c.t.id}')">Hapus</button>
+          </div>
+        </div>`).join('') :
+        `<div class="empty-state"><div class="es-icon">🕐</div><h4>Belum ada riwayat</h4><p>Pendakian yang kamu buat akan muncul di sini.</p><button class="btn btn-primary" onclick="navigate('#/trip-form')">+ Buat Pendakian</button></div>`}
+    </div>
+    ${bottomNavHtml('riwayat')}
+  </div>`;
+}
+function bindRiwayat(){}
+async function selectTrip(id){ state.currentTripId = id; await setSetting('lastTripId', id); navigate('#/dashboard'); }
+async function duplicateTrip(id){
+  const t = await idbGet('trips', id);
+  const newId = uid();
+  const copy = {...t, id:newId, mountain:t.mountain+' (Salinan)', createdAt:new Date().toISOString(), updatedAt:new Date().toISOString()};
+  await idbPut('trips', copy);
+  const items = await idbGetAllByTrip('checklistItems', id);
+  const carrierIdMap = {};
+  const carriers = await idbGetAllByTrip('carriers', id);
+  for(const c of carriers){ const nid = uid(); carrierIdMap[c.id]=nid; await idbPut('carriers', {...c, id:nid, tripId:newId}); }
+  const cats = await idbGetAllByTrip('categories', id);
+  const catIdMap = {};
+  for(const c of cats){ const nid = uid(); catIdMap[c.id]=nid; await idbPut('categories', {...c, id:nid, tripId:newId}); }
+  for(const i of items){ await idbPut('checklistItems', {...i, id:uid(), tripId:newId, category: catIdMap[i.category]||i.category, carrierId: i.carrierId? carrierIdMap[i.carrierId]||null : null, checked:false}); }
+  const members = await idbGetAllByTrip('members', id);
+  for(const m of members){ await idbPut('members', {...m, id:uid(), tripId:newId}); }
+  const itin = await idbGetAllByTrip('itinerary', id);
+  for(const it of itin){ await idbPut('itinerary', {...it, id:uid(), tripId:newId}); }
+  const routes = await idbGetAllByTrip('routePoints', id);
+  for(const r of routes){ await idbPut('routePoints', {...r, id:uid(), tripId:newId}); }
+  toast('Pendakian diduplikat'); render();
+}
+function deleteTrip(id){
+  confirmModal('Hapus pendakian ini beserta seluruh data checklist, tim, dan logistiknya? Tindakan ini tidak dapat dibatalkan.', async ()=>{
+    await idbDelete('trips', id);
+    for(const s of ['checklistItems','carriers','members','itinerary','routePoints','categories']){ await idbDeleteByTrip(s, id); }
+    if(state.currentTripId===id) state.currentTripId=null;
+    toast('Pendakian dihapus'); render();
+  });
+}
+
+/* ---- Settings: export/import/print ---- */
+async function ViewSettings(){
+  return `<div class="screen no-nav">
+    <div class="topbar"><div class="tb-left"><button class="back-btn" onclick="navigate('#/dashboard')">‹</button><h2>Pengaturan & Backup</h2></div></div>
+    <div class="section">
+      <div class="card">
+        <h4 style="font-size:14px;margin-bottom:6px;">Cadangkan Data</h4>
+        <p class="small muted">Ekspor seluruh data pendakianmu sebagai file JSON untuk backup atau pindah perangkat.</p>
+        <button class="btn btn-primary btn-block mt-12" id="exportBtn">⬇️ Export JSON</button>
+      </div>
+      <div class="card mt-12">
+        <h4 style="font-size:14px;margin-bottom:6px;">Pulihkan Data</h4>
+        <p class="small muted">Impor file JSON hasil backup sebelumnya.</p>
+        <input type="file" id="importFile" accept="application/json" style="margin-top:12px;">
+      </div>
+      <div class="card mt-12">
+        <h4 style="font-size:14px;margin-bottom:6px;">Cetak Checklist</h4>
+        <p class="small muted">Cetak checklist pendakian aktif dalam format ramah cetak.</p>
+        <button class="btn btn-outline btn-block mt-12" id="printBtn">🖨️ Print Checklist</button>
+      </div>
+      <div class="card mt-12">
+        <h4 style="font-size:14px;margin-bottom:6px;">Akun</h4>
+        <p class="small muted">Masuk sebagai <b>${escapeHtml(currentUser && (currentUser.email||currentUser.displayName)||'-')}</b></p>
+        <button class="btn btn-outline btn-block mt-12" id="logoutBtn">🚪 Keluar</button>
+      </div>
+      <div class="card mt-12" style="text-align:center;">
+        <div class="small muted">ChecklistSek — data pendakianmu disimpan di cloud (Cloud Firestore) dan tersinkron otomatis antar perangkat.<br>Koneksi internet dibutuhkan.</div>
+      </div>
+    </div>
+  </div>`;
+}
+function bindSettings(){
+  document.getElementById('exportBtn').onclick = async ()=>{
+    const data = {};
+    for(const s of STORES){ data[s] = await idbGetAll(s); }
+    const blob = new Blob([JSON.stringify(data,null,2)], {type:'application/json'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'checklistsek-backup-'+new Date().toISOString().slice(0,10)+'.json';
+    document.body.appendChild(a); a.click(); a.remove();
+    URL.revokeObjectURL(url);
+    toast('Data diekspor');
+  };
+  document.getElementById('importFile').addEventListener('change', async (e)=>{
+    const file = e.target.files[0]; if(!file) return;
+    try{
+      const text = await file.text();
+      const data = JSON.parse(text);
+      confirmModal('Impor akan menggabungkan data dari file dengan data yang ada. Lanjutkan?', async ()=>{
+        for(const s of STORES){
+          if(Array.isArray(data[s])){ for(const row of data[s]){ await idbPut(s, row); } }
+        }
+        toast('Data berhasil diimpor'); render();
+      }, false);
+    }catch(err){ toast('File tidak valid','err'); }
+  });
+  document.getElementById('printBtn').onclick = ()=> window.print();
+  document.getElementById('logoutBtn').onclick = logout;
+}
+
+/* ---- Empty state when no trip exists yet but nav route needs one ---- */
+function emptyTripScreen(active){
+  return `<div class="screen">
+    <div class="topbar"><div class="tb-left"><h2>ChecklistSek</h2></div></div>
+    <div class="empty-state">
+      <div class="es-icon">🏔️</div>
+      <h4>Belum ada pendakian aktif</h4>
+      <p>Buat pendakian terlebih dahulu untuk mengakses fitur ini.</p>
+      <button class="btn btn-primary" onclick="navigate('#/trip-form')">+ Buat Pendakian</button>
+    </div>
+    ${bottomNavHtml(active)}
+  </div>`;
+}
+
+/* ---------------- Init ---------------- */
+window.navigate = navigate;
+document.getElementById('app').innerHTML = `<div class="loading-wrap"><div class="es-icon">🏔️</div><p>Memuat…</p></div>`;
+auth.onAuthStateChanged(async (user)=>{
+  try{
+    currentUser = user;
+    if(user){
+      state.currentTripId = await getSetting('lastTripId');
+      if(!location.hash || location.hash==='#/') location.hash = '#/dashboard';
+    } else {
+      state.currentTripId = null;
+    }
+    await render();
+  }catch(err){
+    console.error(err);
+    document.getElementById('app').innerHTML = `<div class="loading-wrap"><div class="es-icon">⚠️</div><p>Gagal memuat data dari Firestore. Periksa koneksi internet dan konfigurasi Firebase-mu, lalu muat ulang halaman.</p></div>`;
+  }
+});
+
+/* Note: this build now stores all data in Cloud Firestore instead of
+   IndexedDB, so an internet connection is required — this is intentional
+   per the chosen setup (full migration, not offline-first-with-sync).
+   Auth (Google + email/password) gates access, and every trip, checklist,
+   member, and logistics record lives at users/{uid}/{collection}/{docId}
+   in Firestore, scoped per signed-in account.
+   PWA note: this build is intentionally a single index.html file, so there
+   is no separate sw.js to register — browsers do not allow a service
+   worker to be registered from an inline Blob URL (it must be a real
+   same-origin script file), so that piece can't be folded into one file.
+   The manifest above (embedded as a data: URI) still lets browsers offer
+   "Add to Home Screen" / Install. */
+</script>
+</body>
+</html>
